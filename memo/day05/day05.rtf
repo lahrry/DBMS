@@ -1,0 +1,107 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset129 AppleSDGothicNeo-Regular;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww14740\viewh15260\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf0 \'c7\'fc\'ba\'af\'c8\'af
+\f1  
+\f0 \'c7\'d4\'bc\'f6
+\f1 \
+	
+\f0 \'bc\'fd\'c0\'da
+\f1  -> 
+\f0 \'b9\'ae\'c0\'da
+\f1  -> 
+\f0 \'b3\'af\'c2\'a5
+\f1 \
+	       <-        <-\
+\
+TO_CHAR()\
+	
+\f0 \'bc\'fd\'c0\'da\'b8\'a6
+\f1  
+\f0 \'b9\'ae\'c0\'da\'b7\'ce
+\f1 \
+	
+\f0 \'b3\'af\'c2\'a5\'b8\'a6 \'b9\'ae\'c0\'da\'b7\'ce\
+\
+TO_NUMBER()\
+	\'b9\'ae\'c0\'da\'b8\'a6 \'bc\'fd\'c0\'da\'b7\'ce \
+\
+TO_DATE()\
+	\'b9\'ae\'c0\'da\'b8\'a6 \'b3\'af\'c2\'a5\'b7\'ce \
+\
+NVL(\'b0\'aa1, \'b0\'aa2)\
+	\'b0\'aa1\'c0\'cc \'b8\'b8\'be\'e0 NULL \'c0\'cc\'b6\'f3\'b8\'e9 \'b0\'e1\'b0\'fa\'b4\'c2 \'b0\'aa2\
+	\'b0\'aa1\'c0\'cc \'b8\'b8\'be\'e0 NULL \'c0\'cc \'be\'c6\'b4\'cf\'b6\'f3\'b8\'e9 \'b0\'e1\'b0\'fa\'b4\'c2 \'b0\'aa1\
+\
+	NVL(10, \'a1\'ae\'be\'c8\'b3\'e7\'a1\'af) -> 10\
+	NVL(\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+--\'b9\'ae\'c0\'da\'b8\'a6 \'bc\'fd\'c0\'da\'b7\'ce \
+SELECT TO_NUMBER('15000') + 100\
+FROM dual;\
+\
+--\'b9\'ae\'c0\'da\'b8\'a6 \'b3\'af\'c2\'a5\'b7\'ce\
+--TO_DATE(\'b9\'ae\'c0\'da, \'c6\'d0\'c5\'cf)\
+--y: \'b3\'e2\'b5\'b5\
+--m: \'bf\'f9\
+--d: \'c0\'cf \
+--hh: \'bd\'c3\'b0\'a3\
+--mi: \'ba\'d0\
+--ss: \'c3\'ca\
+SELECT TO_DATE('050501','yymmdd')\
+    TO_DATE('2001-01/30 10:14-5','yyyy-mm/dd hh:mi-ss' )\
+FROM dual;\
+\
+SELECT TO_DATE('000101 10', 'yymmdd hh')\
+FROM dual;\
+\
+--hh: \'bd\'c3\'b0\'a3 1~12 \'c7\'a5\'c7\'f6\'b9\'e6\'bd\'c4\
+--hh24: \'bd\'c3\'b0\'a3 0~23 \'c7\'a5\'c7\'f6\'b9\'e6\'bd\'c4\
+SELECT TO_DATE('000101 19', 'yymmdd hh24')\
+FROM dual;\
+\
+--\'b3\'af\'c2\'a5\'b8\'a6 \'b9\'ae\'c0\'da\'b7\'ce\
+--day: \'bf\'e4\'c0\'cf\
+--am or pm: \'bf\'c0\'c0\'fc \'b6\'c7\'b4\'c2 \'bf\'c0\'c8\'c4 \
+SELECT sysdate,\
+    TO_CHAR(sysdate, 'mm-dd hh24-mi-ss day')\
+    TO_CHAR(sysdate, 'yyyy"\'b3\'e2"mm"\'bf\'f9"dd"\'c0\'cf"')\
+FROM dual;\
+\
+--\'bc\'fd\'c0\'da\'b8\'a6 \'b9\'ae\'c0\'da\'b7\'ce\
+--9: \'c0\'da\'b8\'b4\'bc\'f6 \'c0\'c7\'b9\'cc \'ba\'f1\'be\'ee\'c0\'d6\'b4\'c2\'c0\'da\'b8\'ae\'b4\'c2 \'b0\'f8\'b9\'e9\'c0\'cc \'c3\'a4\'bf\'f6\'c1\'fc\
+--0: \'ba\'f1\'be\'ee\'c0\'d6\'b4\'c2 \'c0\'da\'b8\'ae\'b8\'a6 0\'c0\'b8\'b7\'ce \'c3\'a4\'bf\'f2\
+--.: \'bc\'d2\'bc\'fd\'c1\'a1 \'c0\'a7\'c4\'a1\'b8\'a6 \'c0\'c7\'b9\'cc\
+--,: \'c4\'de\'b8\'b6 \'c0\'a7\'c4\'a1\'b8\'a6 \'c0\'c7\'b9\'cc \
+--$: $\'b1\'e2\'c8\'a3\'b8\'a6 \'c0\'c7\'b9\'cc\
+--L: \'c1\'f6\'bf\'aa \'c5\'eb\'c8\'ad \'b1\'e2\'c8\'a3\'b8\'a6 \'c0\'c7\'b9\'cc(\'bf\'f8\'c8\'ad)\
+SELECT TO_CHAR(123456789, '99999999999')\
+FROM dual;\
+\
+SELECT salary, \
+    TRIM(TO_CHAR(salary, 'L999,9.99'))\
+FROM employees;}

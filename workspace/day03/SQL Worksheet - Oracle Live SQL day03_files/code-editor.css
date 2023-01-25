@@ -1,0 +1,88 @@
+/* matches the look of the code to that of the APEX builder editor */
+.a-MonacoEditor {
+    -webkit-font-smoothing: auto;
+}
+
+/* ==========================================================================
+   Monaco Editor
+   Borrowed from images/apex_ui/css/Core.css v22.2 on 28th May 2022
+   ========================================================================== */
+.a-MonacoEditor {
+  width: 100% !important;
+}
+.a-MonacoEditor .monaco-editor .inputarea {
+  background-color: transparent !important;
+}
+.a-MonacoEditor .monaco-editor .suggest-widget,
+.a-MonacoEditor .monaco-editor .monaco-hover {
+  z-index: 1001;
+}
+
+.a-MonacoEditor-toolbar.a-Toolbar .a-Toolbar-group {
+  margin: 4px;
+}
+
+.a-MonacoEditor-toolbar,
+.a-MonacoEditor-notification {
+  flex-shrink: 0;
+  border-bottom: 1px solid;
+}
+
+.a-MonacoEditorContent {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.a-MonacoEditor-editor {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.a-MonacoEditor-notification {
+  position: relative;
+  overflow: hidden;
+}
+
+.a-MonacoEditor-message {
+  overflow: auto;
+  margin-right: 40px;
+  padding: 0;
+  line-height: 16px;
+}
+
+.a-MonacoEditor-message ul {
+  margin: 0;
+  padding: 6px 0;
+  list-style: none;
+}
+
+.a-MonacoEditor-message li {
+  margin: 2px 8px;
+  padding: 4px 8px;
+  line-height: 16px;
+  border-radius: 2px;
+}
+
+.a-Form-fieldContainer div.a-MonacoEditor {
+  border: 1px solid;
+  border-radius: 2px;
+}
+
+.a-MonacoEditor-toolbar {
+  opacity: 0.25;
+  transition: opacity 0.1s;
+}
+
+.a-MonacoEditor-toolbar .a-Button {
+  transition: background-color 0.1s, box-shadow 0.1s;
+}
+
+.a-MonacoEditor.is-active .a-MonacoEditor-toolbar,
+.a-MonacoEditor:hover .a-MonacoEditor-toolbar {
+  opacity: 1;
+}
+
+.monaco-aria-container {
+  margin: -1px;
+}

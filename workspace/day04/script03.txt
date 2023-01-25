@@ -1,0 +1,163 @@
+-- 입력값이 숫자인 함수
+--ROUND(숫자, 소수점자리수)
+SELECT commission_pct, ROUND(commission_pct, 1) 
+FROM employees 
+WHERE department_id = 80;
+
+-- dual 테이블은 결과를 확인하기 위한 가상의 테이블(오라클, mySQL(from생략)만 가능)
+SELECT ROUND(15.3124, -1), -- 반올림 하여 10의자리 까지 표현
+	ROUND(15.3124, 0), -- 반올림하여 1의자리 까지 표현
+	ROUND(15.3124, 1), -- 반올림하여 소수점 아래 1의자리 까지 표현
+	ROUND(15.3124) -- 생략시 반올림하여 1의자리까지 표현
+FROM dual;
+
+SELECT TRUNC(15.3124, 1),
+	TRUNC(15.3124, 0),
+	TRUNC(15.3124, -1),
+	TRUNC(15.3124)
+FROM dual;
+
+SELECT MOD(10, 3), 
+	CEIL(13.513),
+	FLOOR(13.513),
+	SIGN(15),
+	SIGN(-64),
+	SIGN(0),
+	POWER(3, 2),
+	ROUND(SQRT(5), 2) 
+FROM dual;
+
+--where절
+-- 직원id가 홀수인 직원의 직원id와 직원이름조회
+SELECT employee_id, first_name
+FROM employees
+WHERE MOD(employee_id, 2) = 1
+ORDER BY employee_id;
+
+SELECT * FROM employees;
+
+SELECT first_name
+	, LOWER(first_name)
+	, UPPER(first_name)
+FROM employees;
+
+SELECT first_name, salary, email
+FROM employees 
+WHERE upper(first_name) = upper('DaViD');
+
+SELECT email, INITCAP(email)
+FROM employees;
+
+SELECT first_name, SUBSTR(first_name, 2, 2)
+FROM employees;
+	
+SELECT REPLACE('apple', 'pl', 'o')
+FROM dual;
+
+SELECT CONCAT('ap', 10),
+	INSTR('apple', 'xxxx'),
+	LENGTH('apple')
+FROM dual;
+
+SELECT INSTR('hello world', 'o'),
+	INSTR('hello world', 'o', 6) 
+FROM dual;
+
+-- 사원의 이름 중 e 가 두개 이상 존재하는 사원의 이름 조회하기
+-- 이때 두번째 e부터 끝까지 잘라낸 결과 조회하기
+
+--1. e가 두개 존재하는지 어떻게 알 수 있을까?
+--   e의 위치를 파악--> 두번째 e가 존재하면 두번째 e의 위치를 알려주고, 
+--   존재하지 않으면 결과가0
+--2. 두번째 e부터 끝까지 잘라내려면 어떻게 해야할까?
+
+SELECT first_name,
+	instr(lower(first_name), 'e'),
+	instr(lower(first_name), 'e', instr(lower(first_name), 'e') + 1)
+FROM employees;
+
+SELECT first_name,
+	SUBSTR(
+		first_name, 
+		instr(lower(first_name), 'e', instr(lower(first_name), 'e') + 1),
+		LENGTH(first_name)-instr(lower(first_name), 'e', instr(lower(first_name), 'e') + 1) + 1
+	) 결과
+FROM employees 
+WHERE instr(lower(first_name), 'e', instr(lower(first_name), 'e') + 1) <> 0;
+
+SELECT LPAD('apple', 10, 'h'),
+	RPAD('apple', 8, 'ab')
+FROM dual;
+
+SELECT LTRIM('aaa bbab baaa', 'a'),
+	RTRIM('aaababbaaa', 'a')
+FROM dual;
+
+SELECT LTRIM('       오늘 가입했습니다         '),
+	RTRIM('       오늘 가입했습니다         ') 
+FROM dual;
+
+SELECT TRIM('       오늘 가입했습니다         ') , 
+	REPLACE('     안녕 하세요     ', ' ', '')
+FROM dual;
+
+-- 사원의 이름과 이메일 주소를 출력하고자 한다
+-- 이때 사원의 이메일 주소는 개인정보 보호를 위해 앞의 두 글자를 제외한 나머지 부분은 *로 채워서 조회하시오
+-- ex) ABEL --> AB**@koreait.com
+-- ex) GABRIEL --> GA*****@koreait.com
+SELECT first_name, email,
+	RPAD(SUBSTR(email, 1, 2), LENGTH(email), '*' ) || '@koreait.com' 이메일
+FROM employees;
+
+
+--은상님 코드
+SELECT first_name,
+substr(first_name,instr(Lower(first_name),'e',instr(LOWER(first_name),'e')+1),LENGTH(first_name)) 결과
+FROM employees 
+WHERE instr(Lower(first_name),'e',instr(LOWER(first_name),'e')+1)>0;
+
+
+SELECT sysdate, hire_date, MONTHS_BETWEEN(sysdate, hire_date) 
+FROM employees;
+
+SELECT sysdate, ADD_MONTHS(sysdate, 5)
+FROM dual;
+
+SELECT ADD_MONTHS(TO_DATE('20220131','yyyymmdd'), 1)
+FROM dual;
+
+--1:일요일 2:월 3:화 4:수 5:목 6:금 7:토
+SELECT sysdate, NEXT_DAY(sysdate, 2)
+FROM dual;
+
+SELECT hire_date, LAST_DAY(hire_date)
+FROM employees
+ORDER BY hire_date;
+
+SELECT sysdate
+	, ROUND(sysdate, 'year') --반올림하여 년도까지 표현
+	, ROUND(sysdate, 'month') --반올림하여 월까지 표현
+	, ROUND(sysdate) --기본값, 반올림하여 일까지 표현
+	, ROUND(sysdate, 'dd') --반올림하여 일까지 표현
+	, ROUND(sysdate, 'day') --반올림하여 요일 표현
+FROM dual;
+
+SELECT sysdate
+	, TRUNC(sysdate, 'year') --절삭하여 년도까지 표현
+	, TRUNC(sysdate, 'month') --절삭하여 월까지 표현
+	, TRUNC(sysdate) --기본값, 절삭하여 일까지 표현
+	, TRUNC(sysdate, 'dd') --절삭하여 일까지 표현
+	, TRUNC(sysdate, 'day') --절삭하여 요일 표현
+FROM dual;
+
+
+-- 직원의 이름과, 고용일, 연차를 조회하시오
+-- 단, 연차는 다음과 같이 계산이 된다
+-- 2021년 1월 입사자는 현재(2022년 12월) --> 2년차
+-- 2021년 12월 입사자는 현재 2년차
+SELECT first_name, hire_date,
+	MONTHS_BETWEEN(trunc(sysdate, 'year'), trunc(hire_date, 'year')) / 12 + 1 년차
+FROM employees;
+
+
+

@@ -1,0 +1,1849 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)https://livesql.oracle.com/apex/f?p=590:1:12685171019981::::: -->
+<html class="page-1 app-LIVESQL" lang="en" style="--js-sticky-top:60px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  
+  <title>SQL Worksheet - Oracle Live SQL</title>
+  <link rel="stylesheet" href="./SQL Worksheet - Oracle Live SQL day03_files/Core.css" type="text/css">
+<link rel="stylesheet" href="./SQL Worksheet - Oracle Live SQL day03_files/Theme-Standard.css" type="text/css">
+
+  <link rel="stylesheet" href="./SQL Worksheet - Oracle Live SQL day03_files/font-apex.min.css" type="text/css">
+<link rel="stylesheet" href="./SQL Worksheet - Oracle Live SQL day03_files/Core(1).css" type="text/css">
+
+  
+  <link rel="stylesheet" href="./SQL Worksheet - Oracle Live SQL day03_files/Vita.css" type="text/css">
+
+  <link rel="stylesheet" href="./SQL Worksheet - Oracle Live SQL day03_files/livesql.css" type="text/css">
+
+  <link rel="stylesheet" href="./SQL Worksheet - Oracle Live SQL day03_files/code-editor.css" type="text/css">
+<style type="text/css">
+.t-Body-contentInner {
+    flex-grow: 1;
+    flex-basis: 0;
+    overflow: hidden;
+}
+
+.t-Body-contentInner2 {
+    overflow: hidden;
+}
+
+/* Preserve spacing inside of reports */
+.results-div .msg {
+    white-space: pre-wrap;
+}
+
+/* Remove alternating row style */
+.msg .u-Report tr:nth-child(even) td, 
+.msg .u-Report tr:nth-child(even) th[scope=row] {
+    background-color: #FFF;
+}
+
+:root {
+    --worksheet-font-size: 12px;
+}
+#results {
+    font-size: var(--worksheet-font-size, 12px);
+}
+</style>
+
+  <link rel="apple-touch-icon" href="https://livesql.oracle.com/apex/r/livesql/590/files/static/v350/icons/app-icon-192.png"><link rel="icon" href="https://livesql.oracle.com/apex/r/livesql/590/files/static/v350/icons/app-icon-32.png">
+  
+
+<meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="-1"><meta http-equiv="Cache-Control" content="no-cache"><meta name="theme-color" content="#000000">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="&lt;span class=&quot;u-vh&quot;&gt;Oracle&lt;/span&gt; &amp;APPLICATION_TITLE.">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="https://livesql.oracle.com/apex/r/livesql/livesql/manifest.json?v=22.1.3-134861464230&amp;lang=en">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+                              <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="BUM28-7GUGJ-B7YY7-XUSPX-EJ96D",function(){function e(){if(!o){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,i.parentNode.appendChild(e),o=!0}}function t(e){o=!0;var n,t,a,r,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(i.parentNode,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",r=(a.frameElement||a).style,r.width=0,r.height=0,r.border=0,r.display="none",i.parentNode.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void(0);",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=12,window.BOOMR.url=n+"BUM28-7GUGJ-B7YY7-XUSPX-EJ96D";var i=document.currentScript||document.getElementsByTagName("script")[0],o=!1,r=document.createElement("link");if(r.relList&&"function"==typeof r.relList.supports&&r.relList.supports("preload")&&"as"in r)window.BOOMR.snippetMethod="p",r.href=window.BOOMR.url,r.rel="preload",r.as="script",r.addEventListener("load",e),r.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!o)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),i.parentNode.appendChild(r);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="pgt7pm3ijlmp2y43cr4a-f-197a1380b-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,o={"ak.v":"34","ak.cp":"881309","ak.ai":parseInt("562634",10),"ak.ol":"0","ak.cr":6,"ak.ipv":4,"ak.proto":"h2","ak.rid":"a41fe4a","ak.r":31686,"ak.a2":n,"ak.m":"dscx","ak.n":"essl","ak.bpcip":"121.167.247.0","ak.cport":58415,"ak.gh":"23.59.151.52","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.csrc":"-","ak.acc":"","ak.t":"1671107704","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==TntRB3X2F2BBYnH1Rq6iA6pbgTWZXZNqh2C4mtO3GtAGZN2qfja27ic4MuhLKw0t9EzYIrMQITafwJjuYYNlX/QXMY67P1gINJKXJm5xcLAj43Fvjjm8JmmoN+JcOFJrEbye3/KIIe/lN0nqrmGXhOVRc4NHEekUhbh28UBhYPoMk3UIQUtJi4XLL+ZVrxap+VLdvn4Yylo6lk76YkYP/RIaQmdIVVSfH+XXJYoi7ejzFlLciN5M7e9FOtsCNHVSXMog0tMQBN8gZr2Z7M41pnZbTnfGMAvys76uEyub5hdqhRg8fhIH/ghS2yW/tzaQrL5Q0IGrxK/iaScOL5szXQaHzuGmKno1JzqInLYrhz7mTIX+AhwHsVzAQnZHsgkWqNfr1H3aVs5vJGfCTHXuZj9OF7i1U/TvnIlUarKyGT0=","ak.pv":"10","ak.dpoabenc":"","ak.tf":i};if(""!==t)o["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))o["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(o)},rv:function(){var e=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:o,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script><link href="./SQL Worksheet - Oracle Live SQL day03_files/BUM28-7GUGJ-B7YY7-XUSPX-EJ96D" rel="preload" as="script"><script id="boomr-scr-as" src="./SQL Worksheet - Oracle Live SQL day03_files/BUM28-7GUGJ-B7YY7-XUSPX-EJ96D" async=""></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="vs/editor/editor.main" src="./SQL Worksheet - Oracle Live SQL day03_files/editor.main.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ojL10n" src="./SQL Worksheet - Oracle Live SQL day03_files/ojL10n.js"></script><link rel="stylesheet" type="text/css" data-name="vs/editor/editor.main" href="./SQL Worksheet - Oracle Live SQL day03_files/editor.main.css"><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ojtranslations/nls/localeElements" src="./SQL Worksheet - Oracle Live SQL day03_files/localeElements.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="vs/editor/editor.main.nls" src="./SQL Worksheet - Oracle Live SQL day03_files/editor.main.nls.js"></script><style type="text/css" media="screen" class="monaco-colors">.codicon-add:before { content: '\ea60'; }
+.codicon-plus:before { content: '\ea60'; }
+.codicon-gist-new:before { content: '\ea60'; }
+.codicon-repo-create:before { content: '\ea60'; }
+.codicon-lightbulb:before { content: '\ea61'; }
+.codicon-light-bulb:before { content: '\ea61'; }
+.codicon-repo:before { content: '\ea62'; }
+.codicon-repo-delete:before { content: '\ea62'; }
+.codicon-gist-fork:before { content: '\ea63'; }
+.codicon-repo-forked:before { content: '\ea63'; }
+.codicon-git-pull-request:before { content: '\ea64'; }
+.codicon-git-pull-request-abandoned:before { content: '\ea64'; }
+.codicon-record-keys:before { content: '\ea65'; }
+.codicon-keyboard:before { content: '\ea65'; }
+.codicon-tag:before { content: '\ea66'; }
+.codicon-tag-add:before { content: '\ea66'; }
+.codicon-tag-remove:before { content: '\ea66'; }
+.codicon-person:before { content: '\ea67'; }
+.codicon-person-follow:before { content: '\ea67'; }
+.codicon-person-outline:before { content: '\ea67'; }
+.codicon-person-filled:before { content: '\ea67'; }
+.codicon-git-branch:before { content: '\ea68'; }
+.codicon-git-branch-create:before { content: '\ea68'; }
+.codicon-git-branch-delete:before { content: '\ea68'; }
+.codicon-source-control:before { content: '\ea68'; }
+.codicon-mirror:before { content: '\ea69'; }
+.codicon-mirror-public:before { content: '\ea69'; }
+.codicon-star:before { content: '\ea6a'; }
+.codicon-star-add:before { content: '\ea6a'; }
+.codicon-star-delete:before { content: '\ea6a'; }
+.codicon-star-empty:before { content: '\ea6a'; }
+.codicon-comment:before { content: '\ea6b'; }
+.codicon-comment-add:before { content: '\ea6b'; }
+.codicon-alert:before { content: '\ea6c'; }
+.codicon-warning:before { content: '\ea6c'; }
+.codicon-search:before { content: '\ea6d'; }
+.codicon-search-save:before { content: '\ea6d'; }
+.codicon-log-out:before { content: '\ea6e'; }
+.codicon-sign-out:before { content: '\ea6e'; }
+.codicon-log-in:before { content: '\ea6f'; }
+.codicon-sign-in:before { content: '\ea6f'; }
+.codicon-eye:before { content: '\ea70'; }
+.codicon-eye-unwatch:before { content: '\ea70'; }
+.codicon-eye-watch:before { content: '\ea70'; }
+.codicon-circle-filled:before { content: '\ea71'; }
+.codicon-primitive-dot:before { content: '\ea71'; }
+.codicon-close-dirty:before { content: '\ea71'; }
+.codicon-debug-breakpoint:before { content: '\ea71'; }
+.codicon-debug-breakpoint-disabled:before { content: '\ea71'; }
+.codicon-debug-hint:before { content: '\ea71'; }
+.codicon-primitive-square:before { content: '\ea72'; }
+.codicon-edit:before { content: '\ea73'; }
+.codicon-pencil:before { content: '\ea73'; }
+.codicon-info:before { content: '\ea74'; }
+.codicon-issue-opened:before { content: '\ea74'; }
+.codicon-gist-private:before { content: '\ea75'; }
+.codicon-git-fork-private:before { content: '\ea75'; }
+.codicon-lock:before { content: '\ea75'; }
+.codicon-mirror-private:before { content: '\ea75'; }
+.codicon-close:before { content: '\ea76'; }
+.codicon-remove-close:before { content: '\ea76'; }
+.codicon-x:before { content: '\ea76'; }
+.codicon-repo-sync:before { content: '\ea77'; }
+.codicon-sync:before { content: '\ea77'; }
+.codicon-clone:before { content: '\ea78'; }
+.codicon-desktop-download:before { content: '\ea78'; }
+.codicon-beaker:before { content: '\ea79'; }
+.codicon-microscope:before { content: '\ea79'; }
+.codicon-vm:before { content: '\ea7a'; }
+.codicon-device-desktop:before { content: '\ea7a'; }
+.codicon-file:before { content: '\ea7b'; }
+.codicon-file-text:before { content: '\ea7b'; }
+.codicon-more:before { content: '\ea7c'; }
+.codicon-ellipsis:before { content: '\ea7c'; }
+.codicon-kebab-horizontal:before { content: '\ea7c'; }
+.codicon-mail-reply:before { content: '\ea7d'; }
+.codicon-reply:before { content: '\ea7d'; }
+.codicon-organization:before { content: '\ea7e'; }
+.codicon-organization-filled:before { content: '\ea7e'; }
+.codicon-organization-outline:before { content: '\ea7e'; }
+.codicon-new-file:before { content: '\ea7f'; }
+.codicon-file-add:before { content: '\ea7f'; }
+.codicon-new-folder:before { content: '\ea80'; }
+.codicon-file-directory-create:before { content: '\ea80'; }
+.codicon-trash:before { content: '\ea81'; }
+.codicon-trashcan:before { content: '\ea81'; }
+.codicon-history:before { content: '\ea82'; }
+.codicon-clock:before { content: '\ea82'; }
+.codicon-folder:before { content: '\ea83'; }
+.codicon-file-directory:before { content: '\ea83'; }
+.codicon-symbol-folder:before { content: '\ea83'; }
+.codicon-logo-github:before { content: '\ea84'; }
+.codicon-mark-github:before { content: '\ea84'; }
+.codicon-github:before { content: '\ea84'; }
+.codicon-terminal:before { content: '\ea85'; }
+.codicon-console:before { content: '\ea85'; }
+.codicon-repl:before { content: '\ea85'; }
+.codicon-zap:before { content: '\ea86'; }
+.codicon-symbol-event:before { content: '\ea86'; }
+.codicon-error:before { content: '\ea87'; }
+.codicon-stop:before { content: '\ea87'; }
+.codicon-variable:before { content: '\ea88'; }
+.codicon-symbol-variable:before { content: '\ea88'; }
+.codicon-array:before { content: '\ea8a'; }
+.codicon-symbol-array:before { content: '\ea8a'; }
+.codicon-symbol-module:before { content: '\ea8b'; }
+.codicon-symbol-package:before { content: '\ea8b'; }
+.codicon-symbol-namespace:before { content: '\ea8b'; }
+.codicon-symbol-object:before { content: '\ea8b'; }
+.codicon-symbol-method:before { content: '\ea8c'; }
+.codicon-symbol-function:before { content: '\ea8c'; }
+.codicon-symbol-constructor:before { content: '\ea8c'; }
+.codicon-symbol-boolean:before { content: '\ea8f'; }
+.codicon-symbol-null:before { content: '\ea8f'; }
+.codicon-symbol-numeric:before { content: '\ea90'; }
+.codicon-symbol-number:before { content: '\ea90'; }
+.codicon-symbol-structure:before { content: '\ea91'; }
+.codicon-symbol-struct:before { content: '\ea91'; }
+.codicon-symbol-parameter:before { content: '\ea92'; }
+.codicon-symbol-type-parameter:before { content: '\ea92'; }
+.codicon-symbol-key:before { content: '\ea93'; }
+.codicon-symbol-text:before { content: '\ea93'; }
+.codicon-symbol-reference:before { content: '\ea94'; }
+.codicon-go-to-file:before { content: '\ea94'; }
+.codicon-symbol-enum:before { content: '\ea95'; }
+.codicon-symbol-value:before { content: '\ea95'; }
+.codicon-symbol-ruler:before { content: '\ea96'; }
+.codicon-symbol-unit:before { content: '\ea96'; }
+.codicon-activate-breakpoints:before { content: '\ea97'; }
+.codicon-archive:before { content: '\ea98'; }
+.codicon-arrow-both:before { content: '\ea99'; }
+.codicon-arrow-down:before { content: '\ea9a'; }
+.codicon-arrow-left:before { content: '\ea9b'; }
+.codicon-arrow-right:before { content: '\ea9c'; }
+.codicon-arrow-small-down:before { content: '\ea9d'; }
+.codicon-arrow-small-left:before { content: '\ea9e'; }
+.codicon-arrow-small-right:before { content: '\ea9f'; }
+.codicon-arrow-small-up:before { content: '\eaa0'; }
+.codicon-arrow-up:before { content: '\eaa1'; }
+.codicon-bell:before { content: '\eaa2'; }
+.codicon-bold:before { content: '\eaa3'; }
+.codicon-book:before { content: '\eaa4'; }
+.codicon-bookmark:before { content: '\eaa5'; }
+.codicon-debug-breakpoint-conditional-unverified:before { content: '\eaa6'; }
+.codicon-debug-breakpoint-conditional:before { content: '\eaa7'; }
+.codicon-debug-breakpoint-conditional-disabled:before { content: '\eaa7'; }
+.codicon-debug-breakpoint-data-unverified:before { content: '\eaa8'; }
+.codicon-debug-breakpoint-data:before { content: '\eaa9'; }
+.codicon-debug-breakpoint-data-disabled:before { content: '\eaa9'; }
+.codicon-debug-breakpoint-log-unverified:before { content: '\eaaa'; }
+.codicon-debug-breakpoint-log:before { content: '\eaab'; }
+.codicon-debug-breakpoint-log-disabled:before { content: '\eaab'; }
+.codicon-briefcase:before { content: '\eaac'; }
+.codicon-broadcast:before { content: '\eaad'; }
+.codicon-browser:before { content: '\eaae'; }
+.codicon-bug:before { content: '\eaaf'; }
+.codicon-calendar:before { content: '\eab0'; }
+.codicon-case-sensitive:before { content: '\eab1'; }
+.codicon-check:before { content: '\eab2'; }
+.codicon-checklist:before { content: '\eab3'; }
+.codicon-chevron-down:before { content: '\eab4'; }
+.codicon-drop-down-button:before { content: '\eab4'; }
+.codicon-chevron-left:before { content: '\eab5'; }
+.codicon-chevron-right:before { content: '\eab6'; }
+.codicon-chevron-up:before { content: '\eab7'; }
+.codicon-chrome-close:before { content: '\eab8'; }
+.codicon-chrome-maximize:before { content: '\eab9'; }
+.codicon-chrome-minimize:before { content: '\eaba'; }
+.codicon-chrome-restore:before { content: '\eabb'; }
+.codicon-circle-outline:before { content: '\eabc'; }
+.codicon-debug-breakpoint-unverified:before { content: '\eabc'; }
+.codicon-circle-slash:before { content: '\eabd'; }
+.codicon-circuit-board:before { content: '\eabe'; }
+.codicon-clear-all:before { content: '\eabf'; }
+.codicon-clippy:before { content: '\eac0'; }
+.codicon-close-all:before { content: '\eac1'; }
+.codicon-cloud-download:before { content: '\eac2'; }
+.codicon-cloud-upload:before { content: '\eac3'; }
+.codicon-code:before { content: '\eac4'; }
+.codicon-collapse-all:before { content: '\eac5'; }
+.codicon-color-mode:before { content: '\eac6'; }
+.codicon-comment-discussion:before { content: '\eac7'; }
+.codicon-compare-changes:before { content: '\eafd'; }
+.codicon-credit-card:before { content: '\eac9'; }
+.codicon-dash:before { content: '\eacc'; }
+.codicon-dashboard:before { content: '\eacd'; }
+.codicon-database:before { content: '\eace'; }
+.codicon-debug-continue:before { content: '\eacf'; }
+.codicon-debug-disconnect:before { content: '\ead0'; }
+.codicon-debug-pause:before { content: '\ead1'; }
+.codicon-debug-restart:before { content: '\ead2'; }
+.codicon-debug-start:before { content: '\ead3'; }
+.codicon-debug-step-into:before { content: '\ead4'; }
+.codicon-debug-step-out:before { content: '\ead5'; }
+.codicon-debug-step-over:before { content: '\ead6'; }
+.codicon-debug-stop:before { content: '\ead7'; }
+.codicon-debug:before { content: '\ead8'; }
+.codicon-device-camera-video:before { content: '\ead9'; }
+.codicon-device-camera:before { content: '\eada'; }
+.codicon-device-mobile:before { content: '\eadb'; }
+.codicon-diff-added:before { content: '\eadc'; }
+.codicon-diff-ignored:before { content: '\eadd'; }
+.codicon-diff-modified:before { content: '\eade'; }
+.codicon-diff-removed:before { content: '\eadf'; }
+.codicon-diff-renamed:before { content: '\eae0'; }
+.codicon-diff:before { content: '\eae1'; }
+.codicon-discard:before { content: '\eae2'; }
+.codicon-editor-layout:before { content: '\eae3'; }
+.codicon-empty-window:before { content: '\eae4'; }
+.codicon-exclude:before { content: '\eae5'; }
+.codicon-extensions:before { content: '\eae6'; }
+.codicon-eye-closed:before { content: '\eae7'; }
+.codicon-file-binary:before { content: '\eae8'; }
+.codicon-file-code:before { content: '\eae9'; }
+.codicon-file-media:before { content: '\eaea'; }
+.codicon-file-pdf:before { content: '\eaeb'; }
+.codicon-file-submodule:before { content: '\eaec'; }
+.codicon-file-symlink-directory:before { content: '\eaed'; }
+.codicon-file-symlink-file:before { content: '\eaee'; }
+.codicon-file-zip:before { content: '\eaef'; }
+.codicon-files:before { content: '\eaf0'; }
+.codicon-filter:before { content: '\eaf1'; }
+.codicon-flame:before { content: '\eaf2'; }
+.codicon-fold-down:before { content: '\eaf3'; }
+.codicon-fold-up:before { content: '\eaf4'; }
+.codicon-fold:before { content: '\eaf5'; }
+.codicon-folder-active:before { content: '\eaf6'; }
+.codicon-folder-opened:before { content: '\eaf7'; }
+.codicon-gear:before { content: '\eaf8'; }
+.codicon-gift:before { content: '\eaf9'; }
+.codicon-gist-secret:before { content: '\eafa'; }
+.codicon-gist:before { content: '\eafb'; }
+.codicon-git-commit:before { content: '\eafc'; }
+.codicon-git-compare:before { content: '\eafd'; }
+.codicon-git-merge:before { content: '\eafe'; }
+.codicon-github-action:before { content: '\eaff'; }
+.codicon-github-alt:before { content: '\eb00'; }
+.codicon-globe:before { content: '\eb01'; }
+.codicon-grabber:before { content: '\eb02'; }
+.codicon-graph:before { content: '\eb03'; }
+.codicon-gripper:before { content: '\eb04'; }
+.codicon-heart:before { content: '\eb05'; }
+.codicon-home:before { content: '\eb06'; }
+.codicon-horizontal-rule:before { content: '\eb07'; }
+.codicon-hubot:before { content: '\eb08'; }
+.codicon-inbox:before { content: '\eb09'; }
+.codicon-issue-closed:before { content: '\eba4'; }
+.codicon-issue-reopened:before { content: '\eb0b'; }
+.codicon-issues:before { content: '\eb0c'; }
+.codicon-italic:before { content: '\eb0d'; }
+.codicon-jersey:before { content: '\eb0e'; }
+.codicon-json:before { content: '\eb0f'; }
+.codicon-kebab-vertical:before { content: '\eb10'; }
+.codicon-key:before { content: '\eb11'; }
+.codicon-law:before { content: '\eb12'; }
+.codicon-lightbulb-autofix:before { content: '\eb13'; }
+.codicon-link-external:before { content: '\eb14'; }
+.codicon-link:before { content: '\eb15'; }
+.codicon-list-ordered:before { content: '\eb16'; }
+.codicon-list-unordered:before { content: '\eb17'; }
+.codicon-live-share:before { content: '\eb18'; }
+.codicon-loading:before { content: '\eb19'; }
+.codicon-location:before { content: '\eb1a'; }
+.codicon-mail-read:before { content: '\eb1b'; }
+.codicon-mail:before { content: '\eb1c'; }
+.codicon-markdown:before { content: '\eb1d'; }
+.codicon-megaphone:before { content: '\eb1e'; }
+.codicon-mention:before { content: '\eb1f'; }
+.codicon-milestone:before { content: '\eb20'; }
+.codicon-mortar-board:before { content: '\eb21'; }
+.codicon-move:before { content: '\eb22'; }
+.codicon-multiple-windows:before { content: '\eb23'; }
+.codicon-mute:before { content: '\eb24'; }
+.codicon-no-newline:before { content: '\eb25'; }
+.codicon-note:before { content: '\eb26'; }
+.codicon-octoface:before { content: '\eb27'; }
+.codicon-open-preview:before { content: '\eb28'; }
+.codicon-package:before { content: '\eb29'; }
+.codicon-paintcan:before { content: '\eb2a'; }
+.codicon-pin:before { content: '\eb2b'; }
+.codicon-play:before { content: '\eb2c'; }
+.codicon-run:before { content: '\eb2c'; }
+.codicon-plug:before { content: '\eb2d'; }
+.codicon-preserve-case:before { content: '\eb2e'; }
+.codicon-preview:before { content: '\eb2f'; }
+.codicon-project:before { content: '\eb30'; }
+.codicon-pulse:before { content: '\eb31'; }
+.codicon-question:before { content: '\eb32'; }
+.codicon-quote:before { content: '\eb33'; }
+.codicon-radio-tower:before { content: '\eb34'; }
+.codicon-reactions:before { content: '\eb35'; }
+.codicon-references:before { content: '\eb36'; }
+.codicon-refresh:before { content: '\eb37'; }
+.codicon-regex:before { content: '\eb38'; }
+.codicon-remote-explorer:before { content: '\eb39'; }
+.codicon-remote:before { content: '\eb3a'; }
+.codicon-remove:before { content: '\eb3b'; }
+.codicon-replace-all:before { content: '\eb3c'; }
+.codicon-replace:before { content: '\eb3d'; }
+.codicon-repo-clone:before { content: '\eb3e'; }
+.codicon-repo-force-push:before { content: '\eb3f'; }
+.codicon-repo-pull:before { content: '\eb40'; }
+.codicon-repo-push:before { content: '\eb41'; }
+.codicon-report:before { content: '\eb42'; }
+.codicon-request-changes:before { content: '\eb43'; }
+.codicon-rocket:before { content: '\eb44'; }
+.codicon-root-folder-opened:before { content: '\eb45'; }
+.codicon-root-folder:before { content: '\eb46'; }
+.codicon-rss:before { content: '\eb47'; }
+.codicon-ruby:before { content: '\eb48'; }
+.codicon-save-all:before { content: '\eb49'; }
+.codicon-save-as:before { content: '\eb4a'; }
+.codicon-save:before { content: '\eb4b'; }
+.codicon-screen-full:before { content: '\eb4c'; }
+.codicon-screen-normal:before { content: '\eb4d'; }
+.codicon-search-stop:before { content: '\eb4e'; }
+.codicon-server:before { content: '\eb50'; }
+.codicon-settings-gear:before { content: '\eb51'; }
+.codicon-settings:before { content: '\eb52'; }
+.codicon-shield:before { content: '\eb53'; }
+.codicon-smiley:before { content: '\eb54'; }
+.codicon-sort-precedence:before { content: '\eb55'; }
+.codicon-split-horizontal:before { content: '\eb56'; }
+.codicon-split-vertical:before { content: '\eb57'; }
+.codicon-squirrel:before { content: '\eb58'; }
+.codicon-star-full:before { content: '\eb59'; }
+.codicon-star-half:before { content: '\eb5a'; }
+.codicon-symbol-class:before { content: '\eb5b'; }
+.codicon-symbol-color:before { content: '\eb5c'; }
+.codicon-symbol-customcolor:before { content: '\eb5c'; }
+.codicon-symbol-constant:before { content: '\eb5d'; }
+.codicon-symbol-enum-member:before { content: '\eb5e'; }
+.codicon-symbol-field:before { content: '\eb5f'; }
+.codicon-symbol-file:before { content: '\eb60'; }
+.codicon-symbol-interface:before { content: '\eb61'; }
+.codicon-symbol-keyword:before { content: '\eb62'; }
+.codicon-symbol-misc:before { content: '\eb63'; }
+.codicon-symbol-operator:before { content: '\eb64'; }
+.codicon-symbol-property:before { content: '\eb65'; }
+.codicon-wrench:before { content: '\eb65'; }
+.codicon-wrench-subaction:before { content: '\eb65'; }
+.codicon-symbol-snippet:before { content: '\eb66'; }
+.codicon-tasklist:before { content: '\eb67'; }
+.codicon-telescope:before { content: '\eb68'; }
+.codicon-text-size:before { content: '\eb69'; }
+.codicon-three-bars:before { content: '\eb6a'; }
+.codicon-thumbsdown:before { content: '\eb6b'; }
+.codicon-thumbsup:before { content: '\eb6c'; }
+.codicon-tools:before { content: '\eb6d'; }
+.codicon-triangle-down:before { content: '\eb6e'; }
+.codicon-triangle-left:before { content: '\eb6f'; }
+.codicon-triangle-right:before { content: '\eb70'; }
+.codicon-triangle-up:before { content: '\eb71'; }
+.codicon-twitter:before { content: '\eb72'; }
+.codicon-unfold:before { content: '\eb73'; }
+.codicon-unlock:before { content: '\eb74'; }
+.codicon-unmute:before { content: '\eb75'; }
+.codicon-unverified:before { content: '\eb76'; }
+.codicon-verified:before { content: '\eb77'; }
+.codicon-versions:before { content: '\eb78'; }
+.codicon-vm-active:before { content: '\eb79'; }
+.codicon-vm-outline:before { content: '\eb7a'; }
+.codicon-vm-running:before { content: '\eb7b'; }
+.codicon-watch:before { content: '\eb7c'; }
+.codicon-whitespace:before { content: '\eb7d'; }
+.codicon-whole-word:before { content: '\eb7e'; }
+.codicon-window:before { content: '\eb7f'; }
+.codicon-word-wrap:before { content: '\eb80'; }
+.codicon-zoom-in:before { content: '\eb81'; }
+.codicon-zoom-out:before { content: '\eb82'; }
+.codicon-list-filter:before { content: '\eb83'; }
+.codicon-list-flat:before { content: '\eb84'; }
+.codicon-list-selection:before { content: '\eb85'; }
+.codicon-selection:before { content: '\eb85'; }
+.codicon-list-tree:before { content: '\eb86'; }
+.codicon-debug-breakpoint-function-unverified:before { content: '\eb87'; }
+.codicon-debug-breakpoint-function:before { content: '\eb88'; }
+.codicon-debug-breakpoint-function-disabled:before { content: '\eb88'; }
+.codicon-debug-stackframe-active:before { content: '\eb89'; }
+.codicon-debug-stackframe-dot:before { content: '\eb8a'; }
+.codicon-debug-stackframe:before { content: '\eb8b'; }
+.codicon-debug-stackframe-focused:before { content: '\eb8b'; }
+.codicon-debug-breakpoint-unsupported:before { content: '\eb8c'; }
+.codicon-symbol-string:before { content: '\eb8d'; }
+.codicon-debug-reverse-continue:before { content: '\eb8e'; }
+.codicon-debug-step-back:before { content: '\eb8f'; }
+.codicon-debug-restart-frame:before { content: '\eb90'; }
+.codicon-call-incoming:before { content: '\eb92'; }
+.codicon-call-outgoing:before { content: '\eb93'; }
+.codicon-menu:before { content: '\eb94'; }
+.codicon-expand-all:before { content: '\eb95'; }
+.codicon-feedback:before { content: '\eb96'; }
+.codicon-group-by-ref-type:before { content: '\eb97'; }
+.codicon-ungroup-by-ref-type:before { content: '\eb98'; }
+.codicon-account:before { content: '\eb99'; }
+.codicon-bell-dot:before { content: '\eb9a'; }
+.codicon-debug-console:before { content: '\eb9b'; }
+.codicon-library:before { content: '\eb9c'; }
+.codicon-output:before { content: '\eb9d'; }
+.codicon-run-all:before { content: '\eb9e'; }
+.codicon-sync-ignored:before { content: '\eb9f'; }
+.codicon-pinned:before { content: '\eba0'; }
+.codicon-github-inverted:before { content: '\eba1'; }
+.codicon-debug-alt:before { content: '\eb91'; }
+.codicon-server-process:before { content: '\eba2'; }
+.codicon-server-environment:before { content: '\eba3'; }
+.codicon-pass:before { content: '\eba4'; }
+.codicon-stop-circle:before { content: '\eba5'; }
+.codicon-play-circle:before { content: '\eba6'; }
+.codicon-record:before { content: '\eba7'; }
+.codicon-debug-alt-small:before { content: '\eba8'; }
+.codicon-vm-connect:before { content: '\eba9'; }
+.codicon-cloud:before { content: '\ebaa'; }
+.codicon-merge:before { content: '\ebab'; }
+.codicon-export:before { content: '\ebac'; }
+.codicon-graph-left:before { content: '\ebad'; }
+.codicon-magnet:before { content: '\ebae'; }
+.codicon-notebook:before { content: '\ebaf'; }
+.codicon-redo:before { content: '\ebb0'; }
+.codicon-check-all:before { content: '\ebb1'; }
+.codicon-pinned-dirty:before { content: '\ebb2'; }
+.codicon-pass-filled:before { content: '\ebb3'; }
+.codicon-circle-large-filled:before { content: '\ebb4'; }
+.codicon-circle-large-outline:before { content: '\ebb5'; }
+.codicon-combine:before { content: '\ebb6'; }
+.codicon-gather:before { content: '\ebb6'; }
+.codicon-table:before { content: '\ebb7'; }
+.codicon-variable-group:before { content: '\ebb8'; }
+.codicon-type-hierarchy:before { content: '\ebb9'; }
+.codicon-type-hierarchy-sub:before { content: '\ebba'; }
+.codicon-type-hierarchy-super:before { content: '\ebbb'; }
+.codicon-git-pull-request-create:before { content: '\ebbc'; }
+.codicon-run-above:before { content: '\ebbd'; }
+.codicon-run-below:before { content: '\ebbe'; }
+.codicon-notebook-template:before { content: '\ebbf'; }
+.codicon-debug-rerun:before { content: '\ebc0'; }
+.codicon-workspace-trusted:before { content: '\ebc1'; }
+.codicon-workspace-untrusted:before { content: '\ebc2'; }
+.codicon-workspace-unspecified:before { content: '\ebc3'; }
+.codicon-terminal-cmd:before { content: '\ebc4'; }
+.codicon-terminal-debian:before { content: '\ebc5'; }
+.codicon-terminal-linux:before { content: '\ebc6'; }
+.codicon-terminal-powershell:before { content: '\ebc7'; }
+.codicon-terminal-tmux:before { content: '\ebc8'; }
+.codicon-terminal-ubuntu:before { content: '\ebc9'; }
+.codicon-terminal-bash:before { content: '\ebca'; }
+.codicon-arrow-swap:before { content: '\ebcb'; }
+.codicon-copy:before { content: '\ebcc'; }
+.codicon-person-add:before { content: '\ebcd'; }
+.codicon-filter-filled:before { content: '\ebce'; }
+.codicon-wand:before { content: '\ebcf'; }
+.codicon-debug-line-by-line:before { content: '\ebd0'; }
+.codicon-inspect:before { content: '\ebd1'; }
+.codicon-layers:before { content: '\ebd2'; }
+.codicon-layers-dot:before { content: '\ebd3'; }
+.codicon-layers-active:before { content: '\ebd4'; }
+.codicon-compass:before { content: '\ebd5'; }
+.codicon-compass-dot:before { content: '\ebd6'; }
+.codicon-compass-active:before { content: '\ebd7'; }
+.codicon-azure:before { content: '\ebd8'; }
+.codicon-issue-draft:before { content: '\ebd9'; }
+.codicon-git-pull-request-closed:before { content: '\ebda'; }
+.codicon-git-pull-request-draft:before { content: '\ebdb'; }
+.codicon-debug-all:before { content: '\ebdc'; }
+.codicon-debug-coverage:before { content: '\ebdd'; }
+.codicon-run-errors:before { content: '\ebde'; }
+.codicon-folder-library:before { content: '\ebdf'; }
+.codicon-debug-continue-small:before { content: '\ebe0'; }
+.codicon-beaker-stop:before { content: '\ebe1'; }
+.codicon-graph-line:before { content: '\ebe2'; }
+.codicon-graph-scatter:before { content: '\ebe3'; }
+.codicon-pie-chart:before { content: '\ebe4'; }
+.codicon-bracket:before { content: '\eb0f'; }
+.codicon-bracket-dot:before { content: '\ebe5'; }
+.codicon-bracket-error:before { content: '\ebe6'; }
+.codicon-lock-small:before { content: '\ebe7'; }
+.codicon-azure-devops:before { content: '\ebe8'; }
+.codicon-verified-filled:before { content: '\ebe9'; }
+.codicon-newline:before { content: '\ebea'; }
+.codicon-layout:before { content: '\ebeb'; }
+.codicon-layout-activitybar-left:before { content: '\ebec'; }
+.codicon-layout-activitybar-right:before { content: '\ebed'; }
+.codicon-layout-panel-left:before { content: '\ebee'; }
+.codicon-layout-panel-center:before { content: '\ebef'; }
+.codicon-layout-panel-justify:before { content: '\ebf0'; }
+.codicon-layout-panel-right:before { content: '\ebf1'; }
+.codicon-layout-panel:before { content: '\ebf2'; }
+.codicon-layout-sidebar-left:before { content: '\ebf3'; }
+.codicon-layout-sidebar-right:before { content: '\ebf4'; }
+.codicon-layout-statusbar:before { content: '\ebf5'; }
+.codicon-layout-menubar:before { content: '\ebf6'; }
+.codicon-layout-centered:before { content: '\ebf7'; }
+.codicon-target:before { content: '\ebf8'; }
+.codicon-dialog-error:before { content: '\ea87'; }
+.codicon-dialog-warning:before { content: '\ea6c'; }
+.codicon-dialog-info:before { content: '\ea74'; }
+.codicon-dialog-close:before { content: '\ea76'; }
+.codicon-tree-item-expanded:before { content: '\eab4'; }
+.codicon-tree-filter-on-type-on:before { content: '\eb83'; }
+.codicon-tree-filter-on-type-off:before { content: '\eb85'; }
+.codicon-tree-filter-clear:before { content: '\ea76'; }
+.codicon-tree-item-loading:before { content: '\eb19'; }
+.codicon-menu-selection:before { content: '\eab2'; }
+.codicon-menu-submenu:before { content: '\eab6'; }
+.codicon-menubar-more:before { content: '\ea7c'; }
+.codicon-scrollbar-button-left:before { content: '\eb6f'; }
+.codicon-scrollbar-button-right:before { content: '\eb70'; }
+.codicon-scrollbar-button-up:before { content: '\eb71'; }
+.codicon-scrollbar-button-down:before { content: '\eb6e'; }
+.codicon-toolbar-more:before { content: '\ea7c'; }
+.codicon-quick-input-back:before { content: '\ea9b'; }
+.codicon-widget-close:before { content: '\ea76'; }
+.codicon-goto-previous-location:before { content: '\eaa1'; }
+.codicon-goto-next-location:before { content: '\ea9a'; }
+.codicon-diff-review-insert:before { content: '\ea60'; }
+.codicon-diff-review-remove:before { content: '\eb3b'; }
+.codicon-diff-review-close:before { content: '\ea76'; }
+.codicon-diff-insert:before { content: '\ea60'; }
+.codicon-diff-remove:before { content: '\eb3b'; }
+.codicon-marker-navigation-next:before { content: '\ea9a'; }
+.codicon-marker-navigation-previous:before { content: '\eaa1'; }
+.codicon-suggest-more-info:before { content: '\eab6'; }
+.codicon-extensions-warning-message:before { content: '\ea6c'; }
+.codicon-find-selection:before { content: '\eb85'; }
+.codicon-find-collapsed:before { content: '\eab6'; }
+.codicon-find-expanded:before { content: '\eab4'; }
+.codicon-find-replace:before { content: '\eb3d'; }
+.codicon-find-replace-all:before { content: '\eb3c'; }
+.codicon-find-previous-match:before { content: '\eaa1'; }
+.codicon-find-next-match:before { content: '\ea9a'; }
+.codicon-folding-expanded:before { content: '\eab4'; }
+.codicon-folding-collapsed:before { content: '\eab6'; }
+.codicon-parameter-hints-next:before { content: '\eab4'; }
+.codicon-parameter-hints-previous:before { content: '\eab7'; }
+
+			.monaco-scrollable-element > .shadow.top {
+				box-shadow: #dddddd 0 6px 6px -6px inset;
+			}
+
+			.monaco-scrollable-element > .shadow.left {
+				box-shadow: #dddddd 6px 0 6px -6px inset;
+			}
+
+			.monaco-scrollable-element > .shadow.top.left {
+				box-shadow: #dddddd 6px 6px 6px -6px inset;
+			}
+		
+
+			.monaco-scrollable-element > .scrollbar > .slider {
+				background: rgba(100, 100, 100, 0.4);
+			}
+		
+
+			.monaco-scrollable-element > .scrollbar > .slider:hover {
+				background: rgba(100, 100, 100, 0.7);
+			}
+		
+
+			.monaco-scrollable-element > .scrollbar > .slider.active {
+				background: rgba(0, 0, 0, 0.6);
+			}
+		
+.monaco-editor .minimap-slider .minimap-slider-horizontal { background: rgba(100, 100, 100, 0.2); }
+.monaco-editor .minimap-slider:hover .minimap-slider-horizontal { background: rgba(100, 100, 100, 0.35); }
+.monaco-editor .minimap-slider.active .minimap-slider-horizontal { background: rgba(0, 0, 0, 0.3); }
+.monaco-editor .minimap-shadow-visible { box-shadow: #dddddd -6px 0 6px -6px inset; }
+.monaco-editor .scroll-decoration { box-shadow: #dddddd 0 6px 6px -6px inset; }
+.monaco-editor .focused .selected-text { background-color: #add6ff; }
+.monaco-editor .selected-text { background-color: #e5ebf1; }
+
+			.monaco-editor .zone-widget .codicon.codicon-error,
+			.markers-panel .marker-icon.codicon.codicon-error,
+			.text-search-provider-messages .providerMessage .codicon.codicon-error,
+			.extensions-viewlet > .extensions .codicon.codicon-error {
+				color: #e51400;
+			}
+		
+
+			.monaco-editor .zone-widget .codicon.codicon-warning,
+			.markers-panel .marker-icon.codicon.codicon-warning,
+			.extensions-viewlet > .extensions .codicon.codicon-warning,
+			.extension-editor .codicon.codicon-warning,
+			.text-search-provider-messages .providerMessage .codicon.codicon-warning,
+			.preferences-editor .codicon.codicon-warning {
+				color: #bf8803;
+			}
+		
+
+			.monaco-editor .zone-widget .codicon.codicon-info,
+			.markers-panel .marker-icon.codicon.codicon-info,
+			.extensions-viewlet > .extensions .codicon.codicon-info,
+			.text-search-provider-messages .providerMessage .codicon.codicon-info,
+			.extension-editor .codicon.codicon-info {
+				color: #1a85ff;
+			}
+		
+.monaco-link { color: #006ab1; }
+.monaco-link:hover { color: #006ab1; }
+.monaco-editor, .monaco-editor-background, .monaco-editor .inputarea.ime-input { background-color: #fffffe; }
+.monaco-editor, .monaco-editor .inputarea.ime-input { color: #000000; }
+.monaco-editor .margin { background-color: #fffffe; }
+.monaco-editor .rangeHighlight { background-color: rgba(253, 255, 0, 0.2); }
+.monaco-editor .symbolHighlight { background-color: rgba(234, 92, 0, 0.33); }
+.monaco-editor .mtkw { color: rgba(51, 51, 51, 0.2) !important; }
+.monaco-editor .mtkz { color: rgba(51, 51, 51, 0.2) !important; }
+.monaco-editor .line-numbers { color: #237893; }
+.monaco-editor .line-numbers.active-line-number { color: #0b216f; }
+.monaco-editor .unexpected-closing-bracket { color: rgba(255, 18, 18, 0.8); }
+.monaco-editor .bracket-highlighting-0 { color: #0431fa; }
+.monaco-editor .bracket-highlighting-1 { color: #008000; }
+.monaco-editor .bracket-highlighting-2 { color: #7b3814; }
+.monaco-editor .bracket-highlighting-3 { color: #0431fa; }
+.monaco-editor .bracket-highlighting-4 { color: #008000; }
+.monaco-editor .bracket-highlighting-5 { color: #7b3814; }
+.monaco-editor .bracket-highlighting-6 { color: #0431fa; }
+.monaco-editor .bracket-highlighting-7 { color: #008000; }
+.monaco-editor .bracket-highlighting-8 { color: #7b3814; }
+.monaco-editor .bracket-highlighting-9 { color: #0431fa; }
+.monaco-editor .bracket-highlighting-10 { color: #008000; }
+.monaco-editor .bracket-highlighting-11 { color: #7b3814; }
+.monaco-editor .bracket-highlighting-12 { color: #0431fa; }
+.monaco-editor .bracket-highlighting-13 { color: #008000; }
+.monaco-editor .bracket-highlighting-14 { color: #7b3814; }
+.monaco-editor .bracket-highlighting-15 { color: #0431fa; }
+.monaco-editor .bracket-highlighting-16 { color: #008000; }
+.monaco-editor .bracket-highlighting-17 { color: #7b3814; }
+.monaco-editor .bracket-highlighting-18 { color: #0431fa; }
+.monaco-editor .bracket-highlighting-19 { color: #008000; }
+.monaco-editor .bracket-highlighting-20 { color: #7b3814; }
+.monaco-editor .bracket-highlighting-21 { color: #0431fa; }
+.monaco-editor .bracket-highlighting-22 { color: #008000; }
+.monaco-editor .bracket-highlighting-23 { color: #7b3814; }
+.monaco-editor .bracket-highlighting-24 { color: #0431fa; }
+.monaco-editor .bracket-highlighting-25 { color: #008000; }
+.monaco-editor .bracket-highlighting-26 { color: #7b3814; }
+.monaco-editor .bracket-highlighting-27 { color: #0431fa; }
+.monaco-editor .bracket-highlighting-28 { color: #008000; }
+.monaco-editor .bracket-highlighting-29 { color: #7b3814; }
+.monaco-editor .view-overlays .current-line { border: 2px solid #eeeeee; }
+.monaco-editor .margin-view-overlays .current-line-margin { border: 2px solid #eeeeee; }
+.monaco-editor .lines-content .core-guide-indent { box-shadow: 1px 0 0 0 #d3d3d3 inset; }
+.monaco-editor .lines-content .core-guide-indent-active { box-shadow: 1px 0 0 0 #939393 inset; }
+.monaco-editor .bracket-indent-guide.lvl-0 { --guide-color: rgba(4, 49, 250, 0.3); --guide-color-active: #0431fa; }
+.monaco-editor .bracket-indent-guide.lvl-1 { --guide-color: rgba(0, 128, 0, 0.3); --guide-color-active: #008000; }
+.monaco-editor .bracket-indent-guide.lvl-2 { --guide-color: rgba(123, 56, 20, 0.3); --guide-color-active: #7b3814; }
+.monaco-editor .bracket-indent-guide.lvl-3 { --guide-color: rgba(4, 49, 250, 0.3); --guide-color-active: #0431fa; }
+.monaco-editor .bracket-indent-guide.lvl-4 { --guide-color: rgba(0, 128, 0, 0.3); --guide-color-active: #008000; }
+.monaco-editor .bracket-indent-guide.lvl-5 { --guide-color: rgba(123, 56, 20, 0.3); --guide-color-active: #7b3814; }
+.monaco-editor .bracket-indent-guide.lvl-6 { --guide-color: rgba(4, 49, 250, 0.3); --guide-color-active: #0431fa; }
+.monaco-editor .bracket-indent-guide.lvl-7 { --guide-color: rgba(0, 128, 0, 0.3); --guide-color-active: #008000; }
+.monaco-editor .bracket-indent-guide.lvl-8 { --guide-color: rgba(123, 56, 20, 0.3); --guide-color-active: #7b3814; }
+.monaco-editor .bracket-indent-guide.lvl-9 { --guide-color: rgba(4, 49, 250, 0.3); --guide-color-active: #0431fa; }
+.monaco-editor .bracket-indent-guide.lvl-10 { --guide-color: rgba(0, 128, 0, 0.3); --guide-color-active: #008000; }
+.monaco-editor .bracket-indent-guide.lvl-11 { --guide-color: rgba(123, 56, 20, 0.3); --guide-color-active: #7b3814; }
+.monaco-editor .bracket-indent-guide.lvl-12 { --guide-color: rgba(4, 49, 250, 0.3); --guide-color-active: #0431fa; }
+.monaco-editor .bracket-indent-guide.lvl-13 { --guide-color: rgba(0, 128, 0, 0.3); --guide-color-active: #008000; }
+.monaco-editor .bracket-indent-guide.lvl-14 { --guide-color: rgba(123, 56, 20, 0.3); --guide-color-active: #7b3814; }
+.monaco-editor .bracket-indent-guide.lvl-15 { --guide-color: rgba(4, 49, 250, 0.3); --guide-color-active: #0431fa; }
+.monaco-editor .bracket-indent-guide.lvl-16 { --guide-color: rgba(0, 128, 0, 0.3); --guide-color-active: #008000; }
+.monaco-editor .bracket-indent-guide.lvl-17 { --guide-color: rgba(123, 56, 20, 0.3); --guide-color-active: #7b3814; }
+.monaco-editor .bracket-indent-guide.lvl-18 { --guide-color: rgba(4, 49, 250, 0.3); --guide-color-active: #0431fa; }
+.monaco-editor .bracket-indent-guide.lvl-19 { --guide-color: rgba(0, 128, 0, 0.3); --guide-color-active: #008000; }
+.monaco-editor .bracket-indent-guide.lvl-20 { --guide-color: rgba(123, 56, 20, 0.3); --guide-color-active: #7b3814; }
+.monaco-editor .bracket-indent-guide.lvl-21 { --guide-color: rgba(4, 49, 250, 0.3); --guide-color-active: #0431fa; }
+.monaco-editor .bracket-indent-guide.lvl-22 { --guide-color: rgba(0, 128, 0, 0.3); --guide-color-active: #008000; }
+.monaco-editor .bracket-indent-guide.lvl-23 { --guide-color: rgba(123, 56, 20, 0.3); --guide-color-active: #7b3814; }
+.monaco-editor .bracket-indent-guide.lvl-24 { --guide-color: rgba(4, 49, 250, 0.3); --guide-color-active: #0431fa; }
+.monaco-editor .bracket-indent-guide.lvl-25 { --guide-color: rgba(0, 128, 0, 0.3); --guide-color-active: #008000; }
+.monaco-editor .bracket-indent-guide.lvl-26 { --guide-color: rgba(123, 56, 20, 0.3); --guide-color-active: #7b3814; }
+.monaco-editor .bracket-indent-guide.lvl-27 { --guide-color: rgba(4, 49, 250, 0.3); --guide-color-active: #0431fa; }
+.monaco-editor .bracket-indent-guide.lvl-28 { --guide-color: rgba(0, 128, 0, 0.3); --guide-color-active: #008000; }
+.monaco-editor .bracket-indent-guide.lvl-29 { --guide-color: rgba(123, 56, 20, 0.3); --guide-color-active: #7b3814; }
+.monaco-editor .vertical { box-shadow: 1px 0 0 0 var(--guide-color) inset; }
+.monaco-editor .horizontal-top { border-top: 1px solid var(--guide-color); }
+.monaco-editor .horizontal-bottom { border-bottom: 1px solid var(--guide-color); }
+.monaco-editor .vertical.indent-active { box-shadow: 1px 0 0 0 var(--guide-color-active) inset; }
+.monaco-editor .horizontal-top.indent-active { border-top: 1px solid var(--guide-color-active); }
+.monaco-editor .horizontal-bottom.indent-active { border-bottom: 1px solid var(--guide-color-active); }
+.monaco-editor .view-ruler { box-shadow: 1px 0 0 0 #d3d3d3 inset; }
+.monaco-editor .cursors-layer .cursor { background-color: #000000; border-color: #000000; color: #ffffff; }
+.monaco-editor .ghost-text-decoration { color: rgba(0, 0, 0, 0.47) !important; }
+.monaco-editor .ghost-text-decoration-preview { color: rgba(0, 0, 0, 0.47) !important; }
+.monaco-editor .suggest-preview-text .ghost-text { color: rgba(0, 0, 0, 0.47) !important; }
+.monaco-editor .squiggly-error { background: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%206%203'%20enable-background%3D'new%200%200%206%203'%20height%3D'3'%20width%3D'6'%3E%3Cg%20fill%3D'%23e51400'%3E%3Cpolygon%20points%3D'5.5%2C0%202.5%2C3%201.1%2C3%204.1%2C0'%2F%3E%3Cpolygon%20points%3D'4%2C0%206%2C2%206%2C0.6%205.4%2C0'%2F%3E%3Cpolygon%20points%3D'0%2C2%201%2C3%202.4%2C3%200%2C0.6'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") repeat-x bottom left; }
+.monaco-editor .squiggly-warning { background: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%206%203'%20enable-background%3D'new%200%200%206%203'%20height%3D'3'%20width%3D'6'%3E%3Cg%20fill%3D'%23bf8803'%3E%3Cpolygon%20points%3D'5.5%2C0%202.5%2C3%201.1%2C3%204.1%2C0'%2F%3E%3Cpolygon%20points%3D'4%2C0%206%2C2%206%2C0.6%205.4%2C0'%2F%3E%3Cpolygon%20points%3D'0%2C2%201%2C3%202.4%2C3%200%2C0.6'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") repeat-x bottom left; }
+.monaco-editor .squiggly-info { background: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%206%203'%20enable-background%3D'new%200%200%206%203'%20height%3D'3'%20width%3D'6'%3E%3Cg%20fill%3D'%231a85ff'%3E%3Cpolygon%20points%3D'5.5%2C0%202.5%2C3%201.1%2C3%204.1%2C0'%2F%3E%3Cpolygon%20points%3D'4%2C0%206%2C2%206%2C0.6%205.4%2C0'%2F%3E%3Cpolygon%20points%3D'0%2C2%201%2C3%202.4%2C3%200%2C0.6'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") repeat-x bottom left; }
+.monaco-editor .squiggly-hint { background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%223%22%20width%3D%2212%22%3E%3Cg%20fill%3D%22%236c6c6c%22%3E%3Ccircle%20cx%3D%221%22%20cy%3D%221%22%20r%3D%221%22%2F%3E%3Ccircle%20cx%3D%225%22%20cy%3D%221%22%20r%3D%221%22%2F%3E%3Ccircle%20cx%3D%229%22%20cy%3D%221%22%20r%3D%221%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") no-repeat bottom left; }
+.monaco-editor.showUnused .squiggly-inline-unnecessary { opacity: 0.467; }
+.monaco-editor.showDeprecated .squiggly-inline-deprecated { text-decoration: line-through; text-decoration-color: #000000}
+.monaco-diff-editor .diff-review-line-number { color: #237893; }
+.monaco-diff-editor .diff-review-shadow { box-shadow: #dddddd 0 -6px 6px -6px inset; }
+.monaco-editor .line-insert, .monaco-editor .char-insert { background-color: rgba(155, 185, 85, 0.2); }
+.monaco-diff-editor .line-insert, .monaco-diff-editor .char-insert { background-color: rgba(155, 185, 85, 0.2); }
+.monaco-editor .inline-added-margin-view-zone { background-color: rgba(155, 185, 85, 0.2); }
+.monaco-editor .line-delete, .monaco-editor .char-delete { background-color: rgba(255, 0, 0, 0.2); }
+.monaco-diff-editor .line-delete, .monaco-diff-editor .char-delete { background-color: rgba(255, 0, 0, 0.2); }
+.monaco-editor .inline-deleted-margin-view-zone { background-color: rgba(255, 0, 0, 0.2); }
+.monaco-diff-editor.side-by-side .editor.modified { box-shadow: -6px 0 5px -5px #dddddd; }
+
+			.monaco-diff-editor .diffViewport {
+				background: rgba(100, 100, 100, 0.4);
+			}
+		
+
+			.monaco-diff-editor .diffViewport:hover {
+				background: rgba(100, 100, 100, 0.7);
+			}
+		
+
+			.monaco-diff-editor .diffViewport:active {
+				background: rgba(0, 0, 0, 0.6);
+			}
+		
+
+	.monaco-editor .diagonal-fill {
+		background-image: linear-gradient(
+			-45deg,
+			rgba(34, 34, 34, 0.2) 12.5%,
+			#0000 12.5%, #0000 50%,
+			rgba(34, 34, 34, 0.2) 50%, rgba(34, 34, 34, 0.2) 62.5%,
+			#0000 62.5%, #0000 100%
+		);
+		background-size: 8px 8px;
+	}
+	
+.monaco-editor .tokens-inspect-widget { border: 1px solid #c8c8c8; }
+.monaco-editor .tokens-inspect-widget .tokens-inspect-separator { background-color: #c8c8c8; }
+.monaco-editor .tokens-inspect-widget { background-color: #f3f3f3; }
+.monaco-editor .tokens-inspect-widget { color: #616161; }
+.monaco-editor .bracket-match { background-color: rgba(0, 100, 0, 0.1); }
+.monaco-editor .bracket-match { border: 1px solid #b9b9b9; }
+
+		.monaco-editor .contentWidgets .codicon.codicon-light-bulb {
+			color: #ddb100;
+			background-color: rgba(255, 255, 254, 0.7);
+		}
+
+		.monaco-editor .contentWidgets .codicon.codicon-lightbulb-autofix {
+			color: #007acc;
+			background-color: rgba(255, 255, 254, 0.7);
+		}
+.monaco-editor .goto-definition-link { color: #0000ff !important; }
+.monaco-hover .hover-contents a.code-link span { color: #006ab1; }
+.monaco-hover .hover-contents a.code-link span:hover { color: #006ab1; }
+.codicon.codicon-symbol-array { color: #616161; }
+.codicon.codicon-symbol-boolean { color: #616161; }
+.codicon.codicon-symbol-class { color: #d67e00; }
+.codicon.codicon-symbol-method { color: #652d90; }
+.codicon.codicon-symbol-color { color: #616161; }
+.codicon.codicon-symbol-constant { color: #616161; }
+.codicon.codicon-symbol-constructor { color: #652d90; }
+
+			.codicon.codicon-symbol-value,.codicon.codicon-symbol-enum { color: #d67e00; }
+.codicon.codicon-symbol-enum-member { color: #007acc; }
+.codicon.codicon-symbol-event { color: #d67e00; }
+.codicon.codicon-symbol-field { color: #007acc; }
+.codicon.codicon-symbol-file { color: #616161; }
+.codicon.codicon-symbol-folder { color: #616161; }
+.codicon.codicon-symbol-function { color: #652d90; }
+.codicon.codicon-symbol-interface { color: #007acc; }
+.codicon.codicon-symbol-key { color: #616161; }
+.codicon.codicon-symbol-keyword { color: #616161; }
+.codicon.codicon-symbol-module { color: #616161; }
+.codicon.codicon-symbol-namespace { color: #616161; }
+.codicon.codicon-symbol-null { color: #616161; }
+.codicon.codicon-symbol-number { color: #616161; }
+.codicon.codicon-symbol-object { color: #616161; }
+.codicon.codicon-symbol-operator { color: #616161; }
+.codicon.codicon-symbol-package { color: #616161; }
+.codicon.codicon-symbol-property { color: #616161; }
+.codicon.codicon-symbol-reference { color: #616161; }
+.codicon.codicon-symbol-snippet { color: #616161; }
+.codicon.codicon-symbol-string { color: #616161; }
+.codicon.codicon-symbol-struct { color: #616161; }
+.codicon.codicon-symbol-text { color: #616161; }
+.codicon.codicon-symbol-type-parameter { color: #616161; }
+.codicon.codicon-symbol-unit { color: #616161; }
+.codicon.codicon-symbol-variable { color: #007acc; }
+.monaco-editor .hoverHighlight { background-color: rgba(173, 214, 255, 0.15); }
+.monaco-editor .monaco-hover { background-color: #f3f3f3; }
+.monaco-editor .monaco-hover { border: 1px solid #c8c8c8; }
+.monaco-editor .monaco-hover .hover-row:not(:first-child):not(:empty) { border-top: 1px solid rgba(200, 200, 200, 0.5); }
+.monaco-editor .monaco-hover hr { border-top: 1px solid rgba(200, 200, 200, 0.5); }
+.monaco-editor .monaco-hover hr { border-bottom: 0px solid rgba(200, 200, 200, 0.5); }
+.monaco-editor .monaco-hover a { color: #006ab1; }
+.monaco-editor .monaco-hover a:hover { color: #006ab1; }
+.monaco-editor .monaco-hover { color: #616161; }
+.monaco-editor .monaco-hover .hover-row .actions { background-color: #e7e7e7; }
+.monaco-editor .monaco-hover code { background-color: rgba(220, 220, 220, 0.4); }
+.monaco-editor .findOptionsWidget { background-color: #f3f3f3; }
+.monaco-editor .findOptionsWidget { color: #616161; }
+.monaco-editor .findOptionsWidget { box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.16); }
+.monaco-editor .findMatch { background-color: rgba(234, 92, 0, 0.33); }
+.monaco-editor .currentFindMatch { background-color: #a8ac94; }
+.monaco-editor .findScope { background-color: rgba(180, 180, 180, 0.3); }
+.monaco-editor .find-widget { background-color: #f3f3f3; }
+.monaco-editor .find-widget { box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.16); }
+.monaco-editor .find-widget { color: #616161; }
+.monaco-editor .find-widget.no-results .matchesCount { color: #a1260d; }
+.monaco-editor .find-widget .monaco-sash { background-color: #c8c8c8; }
+
+		.monaco-editor .find-widget .button:not(.disabled):hover,
+		.monaco-editor .find-widget .codicon-find-selection:hover {
+			background-color: rgba(184, 184, 184, 0.31) !important;
+		}
+	
+.monaco-editor .find-widget .monaco-inputbox.synthetic-focus { outline-color: #0090f1; }
+.monaco-editor .folded-background { background-color: rgba(173, 214, 255, 0.3); }
+
+		.monaco-editor .cldr.codicon.codicon-folding-expanded,
+		.monaco-editor .cldr.codicon.codicon-folding-collapsed {
+			color: #424242 !important;
+		}
+		
+.monaco-editor.vs .valueSetReplacement { outline: solid 2px #b9b9b9; }
+.monaco-editor .linked-editing-decoration { background: rgba(255, 0, 0, 0.3); border-left-color: rgba(255, 0, 0, 0.3); }
+.monaco-editor .detected-link-active { color: #0000ff !important; }
+.monaco-editor .parameter-hints-widget { border: 1px solid #c8c8c8; }
+.monaco-editor .parameter-hints-widget.multiple .body { border-left: 1px solid rgba(200, 200, 200, 0.5); }
+.monaco-editor .parameter-hints-widget .signature.has-docs { border-bottom: 1px solid rgba(200, 200, 200, 0.5); }
+.monaco-editor .parameter-hints-widget { background-color: #f3f3f3; }
+.monaco-editor .parameter-hints-widget a { color: #006ab1; }
+.monaco-editor .parameter-hints-widget a:hover { color: #006ab1; }
+.monaco-editor .parameter-hints-widget { color: #616161; }
+.monaco-editor .parameter-hints-widget code { background-color: rgba(220, 220, 220, 0.4); }
+.monaco-editor .parameter-hints-widget .parameter.active { color: #0066bf}
+.monaco-editor .accessibilityHelpWidget { background-color: #f3f3f3; }
+.monaco-editor .accessibilityHelpWidget { color: #616161; }
+.monaco-editor .accessibilityHelpWidget { box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16); }
+.monaco-editor .focused .selectionHighlight { background-color: rgba(173, 214, 255, 0.3); }
+.monaco-editor .selectionHighlight { background-color: rgba(173, 214, 255, 0.15); }
+.monaco-editor .wordHighlight { background-color: rgba(87, 87, 87, 0.25); }
+.monaco-editor .wordHighlightStrong { background-color: rgba(14, 99, 156, 0.25); }
+.monaco-editor { --vscode-foreground: #616161;
+--vscode-errorForeground: #a1260d;
+--vscode-descriptionForeground: #717171;
+--vscode-icon-foreground: #424242;
+--vscode-focusBorder: #0090f1;
+--vscode-textSeparator-foreground: rgba(0, 0, 0, 0.18);
+--vscode-textLink-foreground: #006ab1;
+--vscode-textLink-activeForeground: #006ab1;
+--vscode-textPreformat-foreground: #a31515;
+--vscode-textBlockQuote-background: rgba(127, 127, 127, 0.1);
+--vscode-textBlockQuote-border: rgba(0, 122, 204, 0.5);
+--vscode-textCodeBlock-background: rgba(220, 220, 220, 0.4);
+--vscode-widget-shadow: rgba(0, 0, 0, 0.16);
+--vscode-input-background: #ffffff;
+--vscode-input-foreground: #616161;
+--vscode-inputOption-activeBorder: rgba(0, 122, 204, 0);
+--vscode-inputOption-hoverBackground: rgba(184, 184, 184, 0.31);
+--vscode-inputOption-activeBackground: rgba(0, 144, 241, 0.2);
+--vscode-inputOption-activeForeground: #000000;
+--vscode-input-placeholderForeground: rgba(97, 97, 97, 0.5);
+--vscode-inputValidation-infoBackground: #d6ecf2;
+--vscode-inputValidation-infoBorder: #007acc;
+--vscode-inputValidation-warningBackground: #f6f5d2;
+--vscode-inputValidation-warningBorder: #b89500;
+--vscode-inputValidation-errorBackground: #f2dede;
+--vscode-inputValidation-errorBorder: #be1100;
+--vscode-dropdown-background: #ffffff;
+--vscode-dropdown-border: #cecece;
+--vscode-checkbox-background: #ffffff;
+--vscode-checkbox-border: #cecece;
+--vscode-button-foreground: #ffffff;
+--vscode-button-background: #007acc;
+--vscode-button-hoverBackground: #0062a3;
+--vscode-button-secondaryForeground: #ffffff;
+--vscode-button-secondaryBackground: #5f6a79;
+--vscode-button-secondaryHoverBackground: #4c5561;
+--vscode-badge-background: #c4c4c4;
+--vscode-badge-foreground: #333333;
+--vscode-scrollbar-shadow: #dddddd;
+--vscode-scrollbarSlider-background: rgba(100, 100, 100, 0.4);
+--vscode-scrollbarSlider-hoverBackground: rgba(100, 100, 100, 0.7);
+--vscode-scrollbarSlider-activeBackground: rgba(0, 0, 0, 0.6);
+--vscode-progressBar-background: #0e70c0;
+--vscode-editorError-foreground: #e51400;
+--vscode-editorWarning-foreground: #bf8803;
+--vscode-editorInfo-foreground: #1a85ff;
+--vscode-editorHint-foreground: #6c6c6c;
+--vscode-sash-hoverBorder: #0090f1;
+--vscode-editor-background: #fffffe;
+--vscode-editor-foreground: #000000;
+--vscode-editorWidget-background: #f3f3f3;
+--vscode-editorWidget-foreground: #616161;
+--vscode-editorWidget-border: #c8c8c8;
+--vscode-quickInput-background: #f3f3f3;
+--vscode-quickInput-foreground: #616161;
+--vscode-quickInputTitle-background: rgba(0, 0, 0, 0.06);
+--vscode-pickerGroup-foreground: #0066bf;
+--vscode-pickerGroup-border: #cccedb;
+--vscode-keybindingLabel-background: rgba(221, 221, 221, 0.4);
+--vscode-keybindingLabel-foreground: #555555;
+--vscode-keybindingLabel-border: rgba(204, 204, 204, 0.4);
+--vscode-keybindingLabel-bottomBorder: rgba(187, 187, 187, 0.4);
+--vscode-editor-selectionBackground: #add6ff;
+--vscode-editor-inactiveSelectionBackground: #e5ebf1;
+--vscode-editor-selectionHighlightBackground: rgba(173, 214, 255, 0.3);
+--vscode-editor-findMatchBackground: #a8ac94;
+--vscode-editor-findMatchHighlightBackground: rgba(234, 92, 0, 0.33);
+--vscode-editor-findRangeHighlightBackground: rgba(180, 180, 180, 0.3);
+--vscode-searchEditor-findMatchBackground: rgba(234, 92, 0, 0.22);
+--vscode-editor-hoverHighlightBackground: rgba(173, 214, 255, 0.15);
+--vscode-editorHoverWidget-background: #f3f3f3;
+--vscode-editorHoverWidget-foreground: #616161;
+--vscode-editorHoverWidget-border: #c8c8c8;
+--vscode-editorHoverWidget-statusBarBackground: #e7e7e7;
+--vscode-editorLink-activeForeground: #0000ff;
+--vscode-editorInlayHint-foreground: rgba(51, 51, 51, 0.8);
+--vscode-editorInlayHint-background: rgba(196, 196, 196, 0.3);
+--vscode-editorInlayHint-typeForeground: rgba(51, 51, 51, 0.8);
+--vscode-editorInlayHint-typeBackground: rgba(196, 196, 196, 0.3);
+--vscode-editorInlayHint-parameterForeground: rgba(51, 51, 51, 0.8);
+--vscode-editorInlayHint-parameterBackground: rgba(196, 196, 196, 0.3);
+--vscode-editorLightBulb-foreground: #ddb100;
+--vscode-editorLightBulbAutoFix-foreground: #007acc;
+--vscode-diffEditor-insertedTextBackground: rgba(155, 185, 85, 0.2);
+--vscode-diffEditor-removedTextBackground: rgba(255, 0, 0, 0.2);
+--vscode-diffEditor-diagonalFill: rgba(34, 34, 34, 0.2);
+--vscode-list-focusOutline: #0090f1;
+--vscode-list-activeSelectionBackground: #0060c0;
+--vscode-list-activeSelectionForeground: #ffffff;
+--vscode-list-inactiveSelectionBackground: #e4e6f1;
+--vscode-list-hoverBackground: #f0f0f0;
+--vscode-list-dropBackground: #d6ebff;
+--vscode-list-highlightForeground: #0066bf;
+--vscode-list-focusHighlightForeground: #9dddff;
+--vscode-list-invalidItemForeground: #b89500;
+--vscode-list-errorForeground: #b01011;
+--vscode-list-warningForeground: #855f00;
+--vscode-listFilterWidget-background: #efc1ad;
+--vscode-listFilterWidget-outline: rgba(0, 0, 0, 0);
+--vscode-listFilterWidget-noMatchesOutline: #be1100;
+--vscode-list-filterMatchBackground: rgba(234, 92, 0, 0.33);
+--vscode-tree-indentGuidesStroke: #a9a9a9;
+--vscode-tree-tableColumnsBorder: rgba(97, 97, 97, 0.13);
+--vscode-tree-tableOddRowsBackground: rgba(97, 97, 97, 0.04);
+--vscode-list-deemphasizedForeground: #8e8e90;
+--vscode-quickInputList-focusForeground: #ffffff;
+--vscode-quickInputList-focusBackground: #0060c0;
+--vscode-menu-foreground: #616161;
+--vscode-menu-background: #ffffff;
+--vscode-menu-selectionForeground: #ffffff;
+--vscode-menu-selectionBackground: #0060c0;
+--vscode-menu-separatorBackground: #888888;
+--vscode-toolbar-hoverBackground: rgba(184, 184, 184, 0.31);
+--vscode-toolbar-activeBackground: rgba(166, 166, 166, 0.31);
+--vscode-editor-snippetTabstopHighlightBackground: rgba(10, 50, 100, 0.2);
+--vscode-editor-snippetFinalTabstopHighlightBorder: rgba(10, 50, 100, 0.5);
+--vscode-breadcrumb-foreground: rgba(97, 97, 97, 0.8);
+--vscode-breadcrumb-background: #fffffe;
+--vscode-breadcrumb-focusForeground: #4e4e4e;
+--vscode-breadcrumb-activeSelectionForeground: #4e4e4e;
+--vscode-breadcrumbPicker-background: #f3f3f3;
+--vscode-merge-currentHeaderBackground: rgba(64, 200, 174, 0.5);
+--vscode-merge-currentContentBackground: rgba(64, 200, 174, 0.2);
+--vscode-merge-incomingHeaderBackground: rgba(64, 166, 255, 0.5);
+--vscode-merge-incomingContentBackground: rgba(64, 166, 255, 0.2);
+--vscode-merge-commonHeaderBackground: rgba(96, 96, 96, 0.4);
+--vscode-merge-commonContentBackground: rgba(96, 96, 96, 0.16);
+--vscode-editorOverviewRuler-currentContentForeground: rgba(64, 200, 174, 0.5);
+--vscode-editorOverviewRuler-incomingContentForeground: rgba(64, 166, 255, 0.5);
+--vscode-editorOverviewRuler-commonContentForeground: rgba(96, 96, 96, 0.4);
+--vscode-editorOverviewRuler-findMatchForeground: rgba(209, 134, 22, 0.49);
+--vscode-editorOverviewRuler-selectionHighlightForeground: rgba(160, 160, 160, 0.8);
+--vscode-minimap-findMatchHighlight: #d18616;
+--vscode-minimap-selectionOccurrenceHighlight: #c9c9c9;
+--vscode-minimap-selectionHighlight: #add6ff;
+--vscode-minimap-errorHighlight: rgba(255, 18, 18, 0.7);
+--vscode-minimap-warningHighlight: #bf8803;
+--vscode-minimap-foregroundOpacity: #000000;
+--vscode-minimapSlider-background: rgba(100, 100, 100, 0.2);
+--vscode-minimapSlider-hoverBackground: rgba(100, 100, 100, 0.35);
+--vscode-minimapSlider-activeBackground: rgba(0, 0, 0, 0.3);
+--vscode-problemsErrorIcon-foreground: #e51400;
+--vscode-problemsWarningIcon-foreground: #bf8803;
+--vscode-problemsInfoIcon-foreground: #1a85ff;
+--vscode-charts-foreground: #616161;
+--vscode-charts-lines: rgba(97, 97, 97, 0.5);
+--vscode-charts-red: #e51400;
+--vscode-charts-blue: #1a85ff;
+--vscode-charts-yellow: #bf8803;
+--vscode-charts-orange: #d18616;
+--vscode-charts-green: #388a34;
+--vscode-charts-purple: #652d90;
+--vscode-editor-lineHighlightBorder: #eeeeee;
+--vscode-editor-rangeHighlightBackground: rgba(253, 255, 0, 0.2);
+--vscode-editor-symbolHighlightBackground: rgba(234, 92, 0, 0.33);
+--vscode-editorCursor-foreground: #000000;
+--vscode-editorWhitespace-foreground: rgba(51, 51, 51, 0.2);
+--vscode-editorIndentGuide-background: #d3d3d3;
+--vscode-editorIndentGuide-activeBackground: #939393;
+--vscode-editorLineNumber-foreground: #237893;
+--vscode-editorActiveLineNumber-foreground: #0b216f;
+--vscode-editorLineNumber-activeForeground: #0b216f;
+--vscode-editorRuler-foreground: #d3d3d3;
+--vscode-editorCodeLens-foreground: #919191;
+--vscode-editorBracketMatch-background: rgba(0, 100, 0, 0.1);
+--vscode-editorBracketMatch-border: #b9b9b9;
+--vscode-editorOverviewRuler-border: rgba(127, 127, 127, 0.3);
+--vscode-editorGutter-background: #fffffe;
+--vscode-editorUnnecessaryCode-opacity: rgba(0, 0, 0, 0.47);
+--vscode-editorGhostText-foreground: rgba(0, 0, 0, 0.47);
+--vscode-editorOverviewRuler-rangeHighlightForeground: rgba(0, 122, 204, 0.6);
+--vscode-editorOverviewRuler-errorForeground: rgba(255, 18, 18, 0.7);
+--vscode-editorOverviewRuler-warningForeground: #bf8803;
+--vscode-editorOverviewRuler-infoForeground: #1a85ff;
+--vscode-editorBracketHighlight-foreground1: #0431fa;
+--vscode-editorBracketHighlight-foreground2: #008000;
+--vscode-editorBracketHighlight-foreground3: #7b3814;
+--vscode-editorBracketHighlight-foreground4: rgba(0, 0, 0, 0);
+--vscode-editorBracketHighlight-foreground5: rgba(0, 0, 0, 0);
+--vscode-editorBracketHighlight-foreground6: rgba(0, 0, 0, 0);
+--vscode-editorBracketHighlight-unexpectedBracket.foreground: rgba(255, 18, 18, 0.8);
+--vscode-editorBracketPairGuide-background1: rgba(0, 0, 0, 0);
+--vscode-editorBracketPairGuide-background2: rgba(0, 0, 0, 0);
+--vscode-editorBracketPairGuide-background3: rgba(0, 0, 0, 0);
+--vscode-editorBracketPairGuide-background4: rgba(0, 0, 0, 0);
+--vscode-editorBracketPairGuide-background5: rgba(0, 0, 0, 0);
+--vscode-editorBracketPairGuide-background6: rgba(0, 0, 0, 0);
+--vscode-editorBracketPairGuide-activeBackground1: rgba(0, 0, 0, 0);
+--vscode-editorBracketPairGuide-activeBackground2: rgba(0, 0, 0, 0);
+--vscode-editorBracketPairGuide-activeBackground3: rgba(0, 0, 0, 0);
+--vscode-editorBracketPairGuide-activeBackground4: rgba(0, 0, 0, 0);
+--vscode-editorBracketPairGuide-activeBackground5: rgba(0, 0, 0, 0);
+--vscode-editorBracketPairGuide-activeBackground6: rgba(0, 0, 0, 0);
+--vscode-editorUnicodeHighlight-border: #cea33d;
+--vscode-editorOverviewRuler-bracketMatchForeground: #a0a0a0;
+--vscode-peekViewTitle-background: rgba(26, 133, 255, 0.1);
+--vscode-peekViewTitleLabel-foreground: #000000;
+--vscode-peekViewTitleDescription-foreground: #616161;
+--vscode-peekView-border: #1a85ff;
+--vscode-peekViewResult-background: #f3f3f3;
+--vscode-peekViewResult-lineForeground: #646465;
+--vscode-peekViewResult-fileForeground: #1e1e1e;
+--vscode-peekViewResult-selectionBackground: rgba(51, 153, 255, 0.2);
+--vscode-peekViewResult-selectionForeground: #6c6c6c;
+--vscode-peekViewEditor-background: #f2f8fc;
+--vscode-peekViewEditorGutter-background: #f2f8fc;
+--vscode-peekViewResult-matchHighlightBackground: rgba(234, 92, 0, 0.3);
+--vscode-peekViewEditor-matchHighlightBackground: rgba(245, 216, 2, 0.87);
+--vscode-editorMarkerNavigationError-background: #e51400;
+--vscode-editorMarkerNavigationError-headerBackground: rgba(229, 20, 0, 0.1);
+--vscode-editorMarkerNavigationWarning-background: #bf8803;
+--vscode-editorMarkerNavigationWarning-headerBackground: rgba(191, 136, 3, 0.1);
+--vscode-editorMarkerNavigationInfo-background: #1a85ff;
+--vscode-editorMarkerNavigationInfo-headerBackground: rgba(26, 133, 255, 0.1);
+--vscode-editorMarkerNavigation-background: #fffffe;
+--vscode-symbolIcon-arrayForeground: #616161;
+--vscode-symbolIcon-booleanForeground: #616161;
+--vscode-symbolIcon-classForeground: #d67e00;
+--vscode-symbolIcon-colorForeground: #616161;
+--vscode-symbolIcon-constantForeground: #616161;
+--vscode-symbolIcon-constructorForeground: #652d90;
+--vscode-symbolIcon-enumeratorForeground: #d67e00;
+--vscode-symbolIcon-enumeratorMemberForeground: #007acc;
+--vscode-symbolIcon-eventForeground: #d67e00;
+--vscode-symbolIcon-fieldForeground: #007acc;
+--vscode-symbolIcon-fileForeground: #616161;
+--vscode-symbolIcon-folderForeground: #616161;
+--vscode-symbolIcon-functionForeground: #652d90;
+--vscode-symbolIcon-interfaceForeground: #007acc;
+--vscode-symbolIcon-keyForeground: #616161;
+--vscode-symbolIcon-keywordForeground: #616161;
+--vscode-symbolIcon-methodForeground: #652d90;
+--vscode-symbolIcon-moduleForeground: #616161;
+--vscode-symbolIcon-namespaceForeground: #616161;
+--vscode-symbolIcon-nullForeground: #616161;
+--vscode-symbolIcon-numberForeground: #616161;
+--vscode-symbolIcon-objectForeground: #616161;
+--vscode-symbolIcon-operatorForeground: #616161;
+--vscode-symbolIcon-packageForeground: #616161;
+--vscode-symbolIcon-propertyForeground: #616161;
+--vscode-symbolIcon-referenceForeground: #616161;
+--vscode-symbolIcon-snippetForeground: #616161;
+--vscode-symbolIcon-stringForeground: #616161;
+--vscode-symbolIcon-structForeground: #616161;
+--vscode-symbolIcon-textForeground: #616161;
+--vscode-symbolIcon-typeParameterForeground: #616161;
+--vscode-symbolIcon-unitForeground: #616161;
+--vscode-symbolIcon-variableForeground: #007acc;
+--vscode-editorSuggestWidget-background: #f3f3f3;
+--vscode-editorSuggestWidget-border: #c8c8c8;
+--vscode-editorSuggestWidget-foreground: #000000;
+--vscode-editorSuggestWidget-selectedForeground: #ffffff;
+--vscode-editorSuggestWidget-selectedBackground: #0060c0;
+--vscode-editorSuggestWidget-highlightForeground: #0066bf;
+--vscode-editorSuggestWidget-focusHighlightForeground: #9dddff;
+--vscode-editorSuggestWidgetStatus-foreground: rgba(0, 0, 0, 0.5);
+--vscode-editor-foldBackground: rgba(173, 214, 255, 0.3);
+--vscode-editorGutter-foldingControlForeground: #424242;
+--vscode-editor-linkedEditingBackground: rgba(255, 0, 0, 0.3);
+--vscode-editorHoverWidget-highlightForeground: #0066bf;
+--vscode-editor-wordHighlightBackground: rgba(87, 87, 87, 0.25);
+--vscode-editor-wordHighlightStrongBackground: rgba(14, 99, 156, 0.25);
+--vscode-editorOverviewRuler-wordHighlightForeground: rgba(160, 160, 160, 0.8);
+--vscode-editorOverviewRuler-wordHighlightStrongForeground: rgba(192, 160, 192, 0.8); }
+
+.mtk1 { color: #000000; }
+.mtk2 { color: #fffffe; }
+.mtk3 { color: #808080; }
+.mtk4 { color: #398459; }
+.mtk5 { color: #ff0000; }
+.mtk6 { color: #0451a5; }
+.mtk7 { color: #0000ff; }
+.mtk8 { color: #098658; }
+.mtk9 { color: #008000; }
+.mtk10 { color: #dd0000; }
+.mtk11 { color: #383838; }
+.mtk12 { color: #795e26; }
+.mtk13 { color: #cd3131; }
+.mtk14 { color: #863b00; }
+.mtk15 { color: #af00db; }
+.mtk16 { color: #c74634; }
+.mtk17 { color: #b26100; }
+.mtk18 { color: #800000; }
+.mtk19 { color: #e00000; }
+.mtk20 { color: #3030c0; }
+.mtk21 { color: #666666; }
+.mtk22 { color: #778899; }
+.mtk23 { color: #008080; }
+.mtk24 { color: #c700c7; }
+.mtk25 { color: #7e5e8a; }
+.mtk26 { color: #a31515; }
+.mtk27 { color: #1e84bf; }
+.mtk28 { color: #4f76ac; }
+.mtk29 { color: #001188; }
+.mtk30 { color: #4864aa; }
+.mtk31 { color: #008855; }
+.mtki { font-style: italic; }
+.mtkb { font-weight: bold; }
+.mtku { text-decoration: underline; text-underline-position: under; }
+.mtks { text-decoration: line-through; }
+.mtks.mtku { text-decoration: underline line-through; text-underline-position: under; }</style><style type="text/css" media="screen">
+		.monaco-editor .codelens-decoration._ee1f61 { line-height: 18px; font-size: 10px; padding-right: 5px; font-feature-settings: var(--codelens-font-features_ee1f61) }
+		.monaco-editor .codelens-decoration._ee1f61 span.codicon { line-height: 18px; font-size: 10px; }
+		</style><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ojtranslations/nls/en/localeElements" src="./SQL Worksheet - Oracle Live SQL day03_files/localeElements(1).js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="custom-languages/sql" src="./SQL Worksheet - Oracle Live SQL day03_files/sql.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="r/livesql/590/files/static/v350//oracle-sql/main.js" src="./SQL Worksheet - Oracle Live SQL day03_files/main.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="r/livesql/590/files/static/v350//oracle-sql/AsyncParser.js" src="./SQL Worksheet - Oracle Live SQL day03_files/AsyncParser.js"></script><link id="dnsprefetchlink" rel="dns-prefetch" href="https://pgt7pm3ijlmp2y43cr4a-f-197a1380b-clientnsv4-s.akamaihd.net/"></head>
+<body class="t-PageBody t-PageBody--hideLeft t-PageBody--hideActions t-PageTemplate--standard t-DeferredRendering t-PageBody--noContentPadding apex-side-nav apex-icons-fontapex apex-theme-vita js-navCollapsed--hidden js-navCollapsed t-PageBody--leftNav a-pwaInstall--available" id="t_PageBody">
+<a href="https://livesql.oracle.com/apex/f?p=590:1:12685171019981:::::#main" id="t_Body_skipToContent">Skip to Main Content</a>
+<form action="https://livesql.oracle.com/apex/wwv_flow.accept?p_context=590:1:12685171019981" method="post" name="wwv_flow" id="wwvFlowForm" data-oj-binding-provider="none" novalidate="">
+<input type="hidden" name="p_flow_id" value="590" id="pFlowId"><input type="hidden" name="p_flow_step_id" value="1" id="pFlowStepId"><input type="hidden" name="p_instance" value="12685171019981" id="pInstance"><input type="hidden" name="p_page_submission_id" value="62707016946708933619593402498498207386" id="pPageSubmissionId"><input type="hidden" name="p_request" value="" id="pRequest"><input type="hidden" name="p_reload_on_submit" value="A" id="pReloadOnSubmit"><input type="hidden" value="590:1:12685171019981" id="pContext"><input type="hidden" value="62707016946708933619593402498498207386" id="pSalt"><input type="hidden" name="p_debug" value="LEVEL1" id="pdebug">
+<header class="t-Header" id="t_Header" role="banner">
+  
+  <div class="t-Header-branding">
+    <div class="t-Header-controls">
+      <button class="t-Button t-Button--icon t-Button--header t-Button--headerTree" aria-label="Main Navigation" title="Main Navigation" id="t_Button_navControl" type="button" aria-controls="t_TreeNav" aria-expanded="false"><span class="t-Header-controlsIcon" aria-hidden="true"></span></button>
+    </div>
+    <div class="t-Header-logo">
+      <a href="https://livesql.oracle.com/apex/f?p=590:1000:12685171019981:::::" class="t-Header-logo-link"><img src="./SQL Worksheet - Oracle Live SQL day03_files/oracle-logo.svg" alt="" class="apex-logo-img"><span class="apex-logo-text"><span class="u-vh">Oracle</span> Live SQL</span></a>
+      
+    </div>
+    <div class="t-Header-navBar">
+      <div class="t-Header-navBar--start"></div>
+      <div class="t-Header-navBar--center"><ul class="t-NavigationBar " id="3263937843120997057"><li class="t-NavigationBar-item ">
+  <a class="t-Button t-Button--icon t-Button--header t-Button--navBar" href="javascript:apex.theme42.dialog(&#39;f?p=590:44:12685171019981::LEVEL1::P44_PAGE_ID:1\u0026cs=3q8Wvs4xAEP-phtaM2nQaVxpCFU2oPrnugjK59l1T2x-fB_G7CfVFoH1wBc6NbMhnPFPcrBsOGsMrvNmfiCsJ6Q\u0026p_dialog_cs=pmtmuGmk_AOMsbw0kLW1L0RdWFhEgMf3s-6GJCTQxbvp1fVtDF3T1vAx8CLxno5ykg76UxavnRfogMnl55G3xg&#39;,{title:&#39;Submit Feedback&#39;,h:&#39;auto&#39;,w:&#39;720&#39;,mxw:&#39;960&#39;,modal:true,dialog:null,dlgCls:&#39;t-Dialog-page--standard &#39;+&#39;&#39;},&#39;&#39;,apex.gPageContext$)" title="" target="">
+    <span class="t-Icon fa fa-comment-o" aria-hidden="true"></span><span class="t-Button-label">Feedback</span><span class="t-Button-badge"></span>
+  </a>
+</li><li class="t-NavigationBar-item ">
+  <a class="t-Button t-Button--icon t-Button--header t-Button--navBar" href="https://livesql.oracle.com/apex/f?p=590:HELP:12685171019981::LEVEL1:::" title="" target="">
+    <span class="t-Icon a-Icon icon-help" aria-hidden="true"></span><span class="t-Button-label">Help</span><span class="t-Button-badge"></span>
+  </a>
+</li><li class="t-NavigationBar-item has-username">
+  <button class="t-Button t-Button--icon t-Button t-Button--header t-Button--navBar js-menuButton" type="button" id="L7178662666532670" data-menu="menu_L7178662666532670" title="" aria-haspopup="menu">
+      <span class="t-Icon a-Icon icon-user" aria-hidden="true"></span><span class="t-Button-label">LAHRRY0925@GMAIL.COM</span><span class="t-Button-badge"></span><span class="a-Icon icon-down-arrow" aria-hidden="true"></span>
+  </button></li></ul></div>
+      <div class="t-Header-navBar--end"><div class="t-Form-fieldContainer t-Form-fieldContainer--hiddenLabel rel-col ls-darkmode-switch apex-item-wrapper apex-item-wrapper--yes-no " id="P0_DARKMODE_CONTAINER"><div class="t-Form-labelContainer t-Form-labelContainer--hiddenLabel col col-null">
+<label for="P0_DARKMODE" id="P0_DARKMODE_LABEL" class="t-Form-label u-VisuallyHidden">Dark Mode</label>
+</div><div class="t-Form-inputContainer col col-null"><div class="t-Form-itemWrapper"><span class="a-Switch"><input type="checkbox" id="P0_DARKMODE" name="P0_DARKMODE" value="Y" data-on-label="On" data-off-value="N" data-off-label="Off"><span class="a-Switch-toggle"></span></span></div><span id="P0_DARKMODE_error_placeholder" class="a-Form-error" data-template-id="3114753988868898_ET"></span></div></div></div>
+    </div>
+  </div>
+  <div class="t-Header-nav"></div>
+</header>
+<div class="t-Body">
+  <div class="t-Body-nav" id="t_Body_nav" role="navigation" aria-label="Main Navigation">
+  <div class="a-TreeView t-TreeNav js-defaultCollapsed js-defaultCollapsed t-TreeNav--classic" id="t_TreeNav" data-id="1_tree" aria-label="Main Navigation" role="tree" aria-hidden="false" style="visibility: inherit;"><ul role="group"><li id="t_TreeNav_0" role="none" class="a-TreeView-node a-TreeView-node--leaf a-TreeView-node--topLevel"><div role="none" class="a-TreeView-row"></div><div role="none" class="a-TreeView-content"><span class="fa fa fa-home"></span><a tabindex="-1" role="treeitem" class="a-TreeView-label" href="https://livesql.oracle.com/apex/f?p=590:1000:12685171019981::LEVEL1:::" aria-level="1" aria-selected="false">Home</a></div></li><li id="t_TreeNav_1" role="none" class="a-TreeView-node a-TreeView-node--leaf a-TreeView-node--topLevel"><div role="none" class="a-TreeView-row is-selected is-current--top"></div><div role="none" class="a-TreeView-content is-selected is-current--top"><span class="fa fa fa-terminal"></span><a tabindex="0" role="treeitem" class="a-TreeView-label" href="https://livesql.oracle.com/apex/f?p=590:1:12685171019981::LEVEL1:::" aria-level="1" aria-selected="true">SQL Worksheet</a></div></li><li id="t_TreeNav_2" role="none" class="a-TreeView-node is-expandable a-TreeView-node--topLevel"><div role="none" class="a-TreeView-row"></div><span class="a-TreeView-toggle"></span><div role="none" class="a-TreeView-content"><span class="fa fa fa-bars"></span><a tabindex="-1" role="treeitem" class="a-TreeView-label" href="https://livesql.oracle.com/apex/f?p=590:6:12685171019981::LEVEL1:::" aria-level="1" aria-selected="false" aria-expanded="false">My Session</a></div></li><li id="t_TreeNav_3" role="none" class="a-TreeView-node a-TreeView-node--leaf a-TreeView-node--topLevel"><div role="none" class="a-TreeView-row"></div><div role="none" class="a-TreeView-content"><span class="fa fa fa-database"></span><a tabindex="-1" role="treeitem" class="a-TreeView-label" href="https://livesql.oracle.com/apex/f?p=590:71:12685171019981::LEVEL1:::" aria-level="1" aria-selected="false">Schema</a></div></li><li id="t_TreeNav_4" role="none" class="a-TreeView-node is-expandable a-TreeView-node--topLevel"><div role="none" class="a-TreeView-row"></div><span class="a-TreeView-toggle"></span><div role="none" class="a-TreeView-content"><span class="fa fa fa-magic"></span><a tabindex="-1" role="treeitem" class="a-TreeView-label" href="https://livesql.oracle.com/apex/f?p=590:800:12685171019981::LEVEL1:::" aria-level="1" aria-selected="false" aria-expanded="false">Quick SQL</a></div></li><li id="t_TreeNav_5" role="none" class="a-TreeView-node a-TreeView-node--leaf a-TreeView-node--topLevel"><div role="none" class="a-TreeView-row"></div><div role="none" class="a-TreeView-content"><span class="fa fa fa-file-text-o"></span><a tabindex="-1" role="treeitem" class="a-TreeView-label" href="https://livesql.oracle.com/apex/f?p=590:17:12685171019981::LEVEL1:::" aria-level="1" aria-selected="false">My Scripts</a></div></li><li id="t_TreeNav_6" role="none" class="a-TreeView-node a-TreeView-node--leaf a-TreeView-node--topLevel"><div role="none" class="a-TreeView-row"></div><div role="none" class="a-TreeView-content"><span class="fa fa fa-graduation-cap"></span><a tabindex="-1" role="treeitem" class="a-TreeView-label" href="https://livesql.oracle.com/apex/f?p=590:12:12685171019981::LEVEL1:::" aria-level="1" aria-selected="false">My Tutorials</a></div></li><li id="t_TreeNav_7" role="none" class="a-TreeView-node a-TreeView-node--leaf a-TreeView-node--topLevel"><div role="none" class="a-TreeView-row"></div><div role="none" class="a-TreeView-content"><span class="fa fa fa-cubes"></span><a tabindex="-1" role="treeitem" class="a-TreeView-label" href="https://livesql.oracle.com/apex/f?p=590:49:12685171019981::LEVEL1:::" aria-level="1" aria-selected="false">Code Library</a></div></li></ul></div>
+</div>
+<script>(sessionStorage.getItem("nav.590.preferenceForExpanded") === "true" && window.matchMedia("(min-width: " + getComputedStyle(document.documentElement).getPropertyValue("--js-mq-lg") + ")").matches) && document.getElementById('t_PageBody').classList.add('js-navExpanded');</script>
+<script>
+    const labels = document.querySelectorAll(".a-TreeView .a-TreeView-label");
+    for (const label of labels) {
+        label.textContent = label.textContent.replaceAll(/\[(.*?)\]/ig, '');
+    }
+</script>
+  <div class="t-Body-main">
+    <div class="t-Body-title" id="t_Body_title"><nav aria-label="SQL Worksheet" id="R4235377787115104" class="t-BreadcrumbRegion t-BreadcrumbRegion--showBreadcrumb t-BreadcrumbRegion--compactTitle t-BreadcrumbRegion--useRegionTitle">
+  <div class="t-BreadcrumbRegion-top">
+    <div class="t-BreadcrumbRegion-body">
+      <div class="t-BreadcrumbRegion-breadcrumb"><div id="actions" class=""></div></div>
+        <div class="t-BreadcrumbRegion-title">
+        <h1 id="R4235377787115104_heading" class="t-BreadcrumbRegion-titleText" data-apex-heading="">SQL Worksheet</h1>
+      </div>
+    </div>
+    <div class="t-BreadcrumbRegion-buttons"><button class="t-Button t-Button--icon t-Button--noUI t-Button--iconLeft" onclick="void(0);" type="button" id="B5151426299111130"><span class="t-Icon t-Icon--left fa fa-eraser" aria-hidden="true"></span><span class="t-Button-label">Clear</span><span class="t-Icon t-Icon--right fa fa-eraser" aria-hidden="true"></span></button><button class="t-Button t-Button--icon t-Button--noUI t-Button--iconLeft" onclick="javascript:apex.theme42.dialog(&#39;f?p=590:13:12685171019981::LEVEL1:RP:P13_TABLE_NAME\u0026p_dialog_cs=TA_YbkSbZ4ZSTWW_gRnXgkga9Gru1yoUny-w17WXkA8lmqDwdH4_x5W_q2REk3UVYTf6ha1bnPZvKPR6CYnYdA&#39;,{title:&#39;Table\u002FView Finder&#39;,h:&#39;auto&#39;,w:&#39;720&#39;,mxw:&#39;960&#39;,modal:true,dialog:null,dlgCls:&#39;t-Dialog-page--standard &#39;+&#39;&#39;},&#39;&#39;,apex.jQuery(&#39;#B5151870595111131&#39;))" type="button" id="B5151870595111131"><span class="t-Icon t-Icon--left fa fa-flashlight" aria-hidden="true"></span><span class="t-Button-label">Find</span><span class="t-Icon t-Icon--right fa fa-flashlight" aria-hidden="true"></span></button><button class="t-Button t-Button--icon js-menuButton  t-Button--iconRight t-Button--gapRight" data-menu="actions_menu" onclick="void(0);" type="button" id="B5152203177111131" aria-haspopup="menu"><span class="t-Icon t-Icon--left fa fa-angle-down" aria-hidden="true"></span><span class="t-Button-label">Actions</span><span class="t-Icon t-Icon--right fa fa-angle-down" aria-hidden="true"></span></button><button class="t-Button t-Button--icon t-Button--iconLeft t-Button--padRight" onclick="javascript:apex.theme42.dialog(&#39;f?p=590:28:12685171019981::LEVEL1:RP,28::\u0026cs=3AWsw5zktXEoBSbfSY2MxBx38uAzIyMTLfg5-FLuVkqRkoTAA3ick6sxaDtBdjRkZB_eUmfElb2dDLaIx07hbQg\u0026p_dialog_cs=XJ0RUGf6ZZdIAGCL5nvWdHTClwhUfDtLBQxcyg52fNPplgG5ul1rmoCbwOj2rqVGjqU6kVG3FStPusG09-d7qg&#39;,{title:&#39;Save Session&#39;,h:&#39;auto&#39;,w:&#39;720&#39;,mxw:&#39;960&#39;,modal:true,dialog:null,dlgCls:&#39;t-Dialog-page--standard &#39;+&#39;&#39;},&#39;&#39;,apex.jQuery(&#39;#save_session&#39;))" type="button" id="save_session"><span class="t-Icon t-Icon--left fa fa-save" aria-hidden="true"></span><span class="t-Button-label">Save</span><span class="t-Icon t-Icon--right fa fa-save" aria-hidden="true"></span></button><button class="t-Button t-Button--icon t-Button--iconRight t-Button--padLeft t-Button--hot" aria-controls="statement_result" onclick="void(0);" type="button" id="B5153076003111131"><span class="t-Icon t-Icon--left fa fa-play-circle" aria-hidden="true"></span><span class="t-Button-label">Run</span><span class="t-Icon t-Icon--right fa fa-play-circle" aria-hidden="true"></span></button></div>
+  </div>
+  <div class="t-BreadcrumbRegion-bottom"></div>
+</nav>
+</div>
+    <div class="t-Body-content" id="t_Body_content"><div id="t_Body_content_offset"></div>
+      <main id="main" class="t-Body-mainContent">
+        <span id="APEX_SUCCESS_MESSAGE" data-template-id="5712536473689076_S" class="apex-page-success u-hidden"></span><span id="APEX_ERROR_MESSAGE" data-template-id="5712536473689076_E" class="apex-page-error u-hidden"></span>
+        <div class="t-Body-fullContent"></div>
+        <div class="t-Body-contentInner"><div class="t-Body-contentInner2" style="height: 430px; width: 741px;"> 
+<div id="editor_panel" class="resize"> 
+<div id="editor_splitter" style="height: 430px; position: relative;" class="resize a-Splitter"> 
+<div id="sql_panel" class="resize" style="position: absolute; width: 741px; height: 300px; top: 0px;"><div id="editor" style="height: 100%;" class="a-MonacoEditor"><div class="a-MonacoEditorContent">
+                    <div class="a-MonacoEditor-toolbar"></div>
+                    <div class="a-MonacoEditor-notification" style="display:none;">
+                        <div class="a-MonacoEditor-message"></div>
+                        <button title="CODE_EDITOR.CLOSE" aria-label="CODE_EDITOR.CLOSE" class="a-Button a-Button--noLabel a-Button--withIcon a-Button--small a-CodeEditor-searchBar-closeButton" type="button">
+                            <span class="a-Icon ui-icon-closethick" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div class="a-MonacoEditor-editor" data-keybinding-context="1" data-mode-id="sql" style="--codelens-font-features_ee1f61:&quot;liga&quot; off, &quot;calt&quot; off;"><div class="monaco-editor no-user-select mac  showUnused showDeprecated vs" role="code" data-uri="inmemory://model/1" style="width: 741px; height: 299px;"><div data-mprt="3" class="overflow-guard" style="width: 741px; height: 299px;"><div class="margin" role="presentation" aria-hidden="true" style="position: absolute; transform: translate3d(0px, 0px, 0px); contain: strict; top: -2293px; height: 2873px; width: 55px;"><div class="glyph-margin" style="left: 0px; width: 0px; height: 2873px;"></div><div class="margin-view-zones" role="presentation" aria-hidden="true" style="position: absolute;"></div><div class="margin-view-overlays" role="presentation" aria-hidden="true" style="position: absolute; width: 55px; font-family: Menlo, Monaco, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 12px; font-feature-settings: &quot;liga&quot; 0, &quot;calt&quot; 0; line-height: 18px; letter-spacing: 0px; height: 2873px;"><div style="position:absolute;top:2322px;width:100%;height:18px;"><div class="line-numbers" style="left:0px;width:29px;">130</div></div><div style="position:absolute;top:2340px;width:100%;height:18px;"><div class="line-numbers" style="left:0px;width:29px;">131</div></div><div style="position:absolute;top:2358px;width:100%;height:18px;"><div class="line-numbers" style="left:0px;width:29px;">132</div></div><div style="position:absolute;top:2376px;width:100%;height:18px;"><div class="current-line current-line-margin-both" style="width:55px; height:18px;"></div><div class="active-line-number line-numbers" style="left:0px;width:29px;">133</div></div><div style="position:absolute;top:2394px;width:100%;height:18px;"><div class="line-numbers" style="left:0px;width:29px;">134</div></div><div style="position:absolute;top:2304px;width:100%;height:18px;"><div class="line-numbers" style="left:0px;width:29px;">129</div></div><div style="position:absolute;top:2286px;width:100%;height:18px;"><div class="line-numbers" style="left:0px;width:29px;">128</div></div><div style="position:absolute;top:2430px;width:100%;height:18px;"><div class="line-numbers" style="left:0px;width:29px;">136</div></div><div style="position:absolute;top:2448px;width:100%;height:18px;"><div class="line-numbers" style="left:0px;width:29px;">137</div></div><div style="position:absolute;top:2466px;width:100%;height:18px;"><div class="line-numbers" style="left:0px;width:29px;">138</div></div><div style="position:absolute;top:2484px;width:100%;height:18px;"><div class="line-numbers" style="left:0px;width:29px;">139</div></div><div style="position:absolute;top:2502px;width:100%;height:18px;"><div class="line-numbers" style="left:0px;width:29px;">140</div></div><div style="position:absolute;top:2520px;width:100%;height:18px;"><div class="line-numbers" style="left:0px;width:29px;">141</div></div><div style="position:absolute;top:2538px;width:100%;height:18px;"><div class="line-numbers" style="left:0px;width:29px;">142</div></div><div style="position:absolute;top:2556px;width:100%;height:18px;"><div class="line-numbers" style="left:0px;width:29px;">143</div></div><div style="position:absolute;top:2412px;width:100%;height:18px;"><div class="line-numbers" style="left:0px;width:29px;">135</div></div><div style="position:absolute;top:2574px;width:100%;height:18px;"><div class="line-numbers" style="left:0px;width:29px;">144</div></div></div></div><div class="monaco-scrollable-element editor-scrollable vs mac" role="presentation" data-mprt="5" style="position: absolute; overflow: hidden; left: 55px; width: 686px; height: 299px;"><div class="lines-content monaco-editor-background" style="position: absolute; overflow: hidden; width: 1e+06px; height: 1e+06px; transform: translate3d(0px, 0px, 0px); contain: strict; top: -2293px; left: 0px;"><div class="view-overlays" role="presentation" aria-hidden="true" style="position: absolute; height: 0px; width: 634px;"><div style="position:absolute;top:2322px;width:100%;height:18px;"></div><div style="position:absolute;top:2340px;width:100%;height:18px;"></div><div style="position:absolute;top:2358px;width:100%;height:18px;"></div><div style="position:absolute;top:2376px;width:100%;height:18px;"><div class="current-line" style="width:634px; height:18px;"></div></div><div style="position:absolute;top:2394px;width:100%;height:18px;"></div><div style="position:absolute;top:2304px;width:100%;height:18px;"></div><div style="position:absolute;top:2286px;width:100%;height:18px;"></div><div style="position:absolute;top:2430px;width:100%;height:18px;"></div><div style="position:absolute;top:2448px;width:100%;height:18px;"></div><div style="position:absolute;top:2466px;width:100%;height:18px;"></div><div style="position:absolute;top:2484px;width:100%;height:18px;"></div><div style="position:absolute;top:2502px;width:100%;height:18px;"></div><div style="position:absolute;top:2520px;width:100%;height:18px;"></div><div style="position:absolute;top:2538px;width:100%;height:18px;"></div><div style="position:absolute;top:2556px;width:100%;height:18px;"></div><div style="position:absolute;top:2412px;width:100%;height:18px;"></div><div style="position:absolute;top:2574px;width:100%;height:18px;"></div></div><div role="presentation" aria-hidden="true" class="view-rulers"></div><div class="view-zones" role="presentation" aria-hidden="true" style="position: absolute;"></div><div class="view-lines monaco-mouse-cursor-text" role="presentation" aria-hidden="true" data-mprt="7" style="position: absolute; font-family: Menlo, Monaco, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 12px; font-feature-settings: &quot;liga&quot; 0, &quot;calt&quot; 0; line-height: 18px; letter-spacing: 0px; width: 634px; height: 2873px;"><div style="top:2322px;height:18px;" class="view-line"><span><span class="mtk16">FROM</span><span class="mtk1">&nbsp;employees&nbsp;</span></span></div><div style="top:2340px;height:18px;" class="view-line"><span><span class="mtk16">WHERE</span><span class="mtk1">&nbsp;department_id&nbsp;=&nbsp;</span><span class="mtk8">80</span><span class="mtk1">&nbsp;</span><span class="mtk9">--&nbsp;부서번호&nbsp;=&nbsp;80&nbsp;은&nbsp;안됨.&nbsp;WHERE&nbsp;절에선&nbsp;별명&nbsp;X</span></span></div><div style="top: 2358px; height: 18px;" class="view-line"><span><span class="mtk9">--&nbsp;WHERE&nbsp;department_id&nbsp;+&nbsp;10&nbsp;=&nbsp;90&nbsp;이렇게&nbsp;적어도됨&nbsp;(쓸일은&nbsp;</span><span class="mtk9">없지만)</span></span></div><div style="top:2376px;height:18px;" class="view-line"><span><span class="mtk16">ORDER</span><span class="mtk1">&nbsp;</span><span class="mtk16">BY</span><span class="mtk1">&nbsp;조정봉급&nbsp;</span><span class="mtk16">DESC</span><span class="mtk1">;&nbsp;</span><span class="mtk9">--별명&nbsp;사용&nbsp;가능&nbsp;</span></span></div><div style="top: 2394px; height: 18px;" class="view-line"><span><span></span></span></div><div style="top:2304px;height:18px;" class="view-line"><span><span class="mtk1">,&nbsp;email&nbsp;"이메일&nbsp;주소"&nbsp;</span><span class="mtk9">--별명에&nbsp;띄어쓰기&nbsp;있으면&nbsp;무조건&nbsp;쌍따음표&nbsp;필수//&nbsp;명령어일&nbsp;경우&nbsp;</span></span></div><div style="top:2286px;height:18px;" class="view-line"><span><span class="mtk1">,&nbsp;department_id&nbsp;부서번호</span></span></div><div style="top: 2430px; height: 18px;" class="view-line"><span><span class="mtk16">SELECT</span><span class="mtk1">&nbsp;first_name&nbsp;</span><span class="mtk16">AS</span><span class="mtk1">&nbsp;"이름"</span></span></div><div style="top: 2448px; height: 18px;" class="view-line"><span><span class="mtk1">,&nbsp;salary&nbsp;"봉급"</span></span></div><div style="top: 2466px; height: 18px;" class="view-line"><span><span class="mtk1">,&nbsp;salary&nbsp;+&nbsp;salary&nbsp;*&nbsp;commission_pct&nbsp;</span><span class="mtk16">AS</span><span class="mtk1">&nbsp;조정봉급</span></span></div><div style="top: 2484px; height: 18px;" class="view-line"><span><span class="mtk1">,&nbsp;department_id&nbsp;부서번호</span></span></div><div style="top: 2502px; height: 18px;" class="view-line"><span><span class="mtk1">,&nbsp;email&nbsp;"이메일&nbsp;주소"&nbsp;</span><span class="mtk9">--&nbsp;(3)&nbsp;내가&nbsp;원하는&nbsp;컬럼을&nbsp;골라내고,&nbsp;별명을&nbsp;설정함&nbsp;</span></span></div><div style="top: 2520px; height: 18px;" class="view-line"><span><span class="mtk16">FROM</span><span class="mtk1">&nbsp;employees&nbsp;</span><span class="mtk9">--&nbsp;(1)&nbsp;employees&nbsp;테이블에서&nbsp;</span></span></div><div style="top: 2538px; height: 18px;" class="view-line"><span><span class="mtk16">WHERE</span><span class="mtk1">&nbsp;department_id&nbsp;=&nbsp;</span><span class="mtk8">80</span><span class="mtk1">&nbsp;</span><span class="mtk9">--(2)&nbsp;department_id&nbsp;가&nbsp;80인&nbsp;행을&nbsp;골라내서&nbsp;</span></span></div><div style="top: 2556px; height: 18px;" class="view-line"><span><span class="mtk16">ORDER</span><span class="mtk1">&nbsp;</span><span class="mtk16">BY</span><span class="mtk1">&nbsp;조정봉급&nbsp;</span><span class="mtk16">DESC</span><span class="mtk1">;&nbsp;</span><span class="mtk9">--(4)&nbsp;정렬하여&nbsp;보여준다&nbsp;</span></span></div><div style="top:2412px;height:18px;" class="view-line"><span><span class="mtk9">--&nbsp;메케니즘&nbsp;보기&nbsp;</span></span></div><div style="top:2574px;height:18px;" class="view-line"><span><span></span></span></div></div><div data-mprt="1" class="contentWidgets" style="position: absolute; top: 0px;"></div><div role="presentation" aria-hidden="true" class="cursors-layer cursor-line-style cursor-solid"><div class="cursor monaco-mouse-cursor-text " style="height: 18px; top: 2376px; left: 255px; font-family: Menlo, Monaco, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 12px; font-feature-settings: &quot;liga&quot; 0, &quot;calt&quot; 0; line-height: 18px; letter-spacing: 0px; display: block; visibility: hidden; width: 2px;"></div></div></div><div role="presentation" aria-hidden="true" class="invisible scrollbar horizontal fade" style="position: absolute; width: 583px; height: 12px; left: 0px; bottom: 0px;"><div class="slider" style="position: absolute; top: 0px; left: 0px; height: 12px; transform: translate3d(0px, 0px, 0px); contain: strict; width: 548px;"></div></div><canvas class="decorationsOverviewRuler" aria-hidden="true" width="28" height="598" style="position: absolute; transform: translate3d(0px, 0px, 0px); contain: strict; top: 0px; right: 0px; width: 14px; height: 299px; display: block;"></canvas><div role="presentation" aria-hidden="true" class="invisible scrollbar vertical fade" style="position: absolute; width: 14px; height: 299px; right: 0px; top: 0px;"><div class="slider" style="position: absolute; top: 239px; left: 0px; width: 14px; transform: translate3d(0px, 0px, 0px); contain: strict; height: 31px;"></div></div></div><div role="presentation" aria-hidden="true" style="width: 638px;" class="scroll-decoration"></div><textarea data-mprt="6" class="inputarea monaco-mouse-cursor-text" wrap="off" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" aria-label="The editor is not accessible at this time. Press Alt+F1 for options." tabindex="0" role="textbox" aria-roledescription="editor" aria-multiline="true" aria-haspopup="false" aria-autocomplete="both" style="font-family: Menlo, Monaco, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 12px; font-feature-settings: &quot;liga&quot; 0, &quot;calt&quot; 0; line-height: 18px; letter-spacing: 0px; top: 83px; left: 311px; width: 1px; height: 18px; color: rgb(0, 128, 0); font-style: inherit;"></textarea><div style="position: absolute; top: 0px; left: 0px; width: 0px; height: 0px;" class="monaco-editor-background textAreaCover line-numbers"></div><div data-mprt="4" class="overlayWidgets" style="width: 741px;"><div widgetid="editor.contrib.quickInputWidget" style="position: absolute; top: 0px; right: 50%;"></div><div class="accessibilityHelpWidget" role="dialog" aria-hidden="true" widgetid="editor.contrib.accessibilityHelpWidget" style="display: none; position: absolute;"><div role="document"></div></div><div class="monaco-hover hidden" tabindex="0" role="tooltip" widgetid="editor.contrib.modesGlyphHoverWidget" style="position: absolute;"><div class="monaco-scrollable-element  mac" role="presentation" style="position: relative; overflow: hidden;"><div class="monaco-hover-content" style="overflow: hidden;"></div><div role="presentation" aria-hidden="true" class="invisible scrollbar horizontal" style="position: absolute;"><div class="slider" style="position: absolute; top: 0px; left: 0px; height: 10px; transform: translate3d(0px, 0px, 0px); contain: strict;"></div></div><div role="presentation" aria-hidden="true" class="invisible scrollbar vertical" style="position: absolute;"><div class="slider" style="position: absolute; top: 0px; left: 0px; width: 10px; transform: translate3d(0px, 0px, 0px); contain: strict;"></div></div><div class="shadow"></div><div class="shadow"></div><div class="shadow"></div></div></div></div><div data-mprt="8" class="minimap slider-mouseover" role="presentation" aria-hidden="true" style="position: absolute; left: 638px; width: 89px; height: 299px;"><div class="minimap-shadow-visible" style="height: 299px;"></div><canvas width="178" height="598" style="position: absolute; left: 0px; width: 89px; height: 299px;"></canvas><canvas class="minimap-decorations-layer" width="178" height="598" style="position: absolute; left: 0px; width: 89px; height: 299px;"></canvas><div class="minimap-slider" style="position: absolute; transform: translate3d(0px, 0px, 0px); contain: strict; width: 89px; display: block; top: 238.778px; height: 33px;"><div class="minimap-slider-horizontal" style="position: absolute; left: 0px; width: 89px; top: 0px; height: 33px;"></div></div></div></div><div data-mprt="2" class="overflowingContentWidgets"><div class="monaco-editor rename-box" widgetid="__renameInputWidget" style="background-color: rgb(243, 243, 243); box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 8px 2px; color: rgb(97, 97, 97); position: fixed; display: none; visibility: hidden; max-width: 741px;"><input class="rename-input" type="text" aria-label="Rename input. Type new name and press Enter to commit." style="font-family: Menlo, Monaco, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 12px; background-color: rgb(255, 255, 255); border-width: 0px; border-style: none;"><div class="rename-label" style="font-size: 9.6px;">Enter to Rename, ⇧Enter to Preview</div></div><div class="monaco-hover hidden" tabindex="0" role="tooltip" widgetid="editor.contrib.contentHoverWidget" style="position: fixed; display: none; visibility: hidden; max-width: 741px;"><div class="monaco-scrollable-element  mac" role="presentation" style="position: relative; overflow: hidden;"><div class="monaco-hover-content" style="overflow: hidden; font-size: 12px; line-height: 1.5; max-height: 250px; max-width: 500px;"></div><div role="presentation" aria-hidden="true" class="invisible scrollbar horizontal" style="position: absolute;"><div class="slider" style="position: absolute; top: 0px; left: 0px; height: 10px; transform: translate3d(0px, 0px, 0px); contain: strict;"></div></div><div role="presentation" aria-hidden="true" class="invisible scrollbar vertical" style="position: absolute;"><div class="slider" style="position: absolute; top: 0px; left: 0px; width: 10px; transform: translate3d(0px, 0px, 0px); contain: strict;"></div></div><div class="shadow"></div><div class="shadow"></div><div class="shadow"></div></div></div></div></div></div>
+                </div></div><input type="hidden" name="P1_SQL" id="P1_SQL" value="SELECT * FROM employees;
+
+-- salary가 10000 보다 크거나 같은 직원의 이름 조회하기
+SELECT first_name, salary
+FROM employees
+WHERE salary &gt;= 10000; 
+
+-- 입사일이 2005년 01/01 이후인 사람들
+SELECT first_name, hire_date
+FROM employees
+WHERE hire_date &gt; to_date(&#39;20050101&#39;, &#39;yyyymmdd&#39;);
+                       -- 2005년 1월1일 이라는 날짜 타입 값 
+
+--이름이 David인 사람의 봉급 조회하기
+SELECT salary, first_name
+FROM employees
+WHERE first_name = &#39;David&#39;;
+
+--알파벳 순이 M보다 큰 애들 골라준다 
+--문자의 크기는 컴퓨터 상의 문자에 해당하는 숫자 크기로 계산
+--각각에 문자에 해당하는 숫자값을 정리해놓은 규칙을 아스키 코드라고 한다 
+SELECT first_name
+FROM employees
+WHERE first_name &gt; &#39;M&#39;;
+--아스키표를 참고하면 대문자보다 소문자가 더 큰 숫자값이기 때문에, &#39;M&#39;보다 크다라고 입력하면, 결과값으로는
+--Mathew Meow 등 모든 사람들의 이름들이 나온다. 
+
+--컬럼쓰는 자리에 값을 값을 쓰는 자리에 컬럼 쓰는거 가능
+SELECT first_name, salary
+FROM employees
+WHERE 100 &gt; 50; -- 항상 만족하는 조건이니 모든 값 가져온다 (이렇게 쓰진 않지만 원리 설명하자면)
+SELECT first_name, salary
+FROM employees
+WHERE salary &gt; employee_id; -- (이렇게 쓰진 않지만 원리 설명하자면)
+
+--SQL 연산자 
+--BETWEEN
+SELECT first_name, salary
+FROM employees
+WHERE salary BETWEEN 5000 AND 10000;
+
+--IN
+SELECT first_name, salary
+FROM employees
+WHERE first_name IN (&#39;David&#39;, &#39;Peter&#39;, &#39;John&#39;);
+SELECT first_name, salary
+FROM employees
+WHERE salary IN (10000, 4800);
+
+--LIKE
+--패턴 설정시 규칙 
+-- % : ~로 해석
+-- _ : 자릿수로 해석
+SELECT phone_number, first_name, email
+FROM employees
+WHERE first_name LIKE &#39;%e%e_&#39;; --몇글자 상관없이 e 몇글자 상관없이 e 뒤에 한글자 
+
+--ANY
+SELECT first_name, salary
+FROM employees
+WHERE salary &gt; ANY (5000, 10000, 8000);
+
+--ALL
+SELECT first_name, salary
+FROM employees
+WHERE salary &gt; ALL (5000, 10000, 8000);
+
+--NULL 
+-- =을 쓰면 가져올수 없다
+SELECT phone_number, commission_pct
+FROM employees
+WHERE commission_pct IS NULL;
+
+--IS NOT NULL
+-- &lt;&gt;을 쓰면 가져올수 없다 
+SELECT phone_number, commission_pct
+FROM employees
+WHERE commission_pct IS NOT NULL;
+
+-- 논리 연산자  AND
+-- 부서 id가 50이면서 봉급이 10000이상인 직원의 이름 조회
+SELECT first_name, department_id, salary
+FROM employees
+WHERE department_id = 50 
+AND salary &gt;= 5000;
+
+-- BETWEEN 에서 초과 미만 표현 못하니까, AND 로 표현 가능 
+SELECT first_name, salary
+FROM employees
+WHERE salary &gt; 5000 AND salary &lt; 10000;
+
+-- OR 
+-- 이름에 vi가 포함되어 있거나 salary가 5000이상, 10000이하인 직원 이름 조회
+SELECT  first_name, salary
+FROM employees
+WHERE first_name LIKE &#39;%vi%&#39; 
+OR salary BETWEEN 5000 AND 10000;
+
+-- NOT
+SELECT first_name 
+FROM employees
+WHERE NOT first_name LIKE &#39;%vi%&#39;;
+
+SELECT *
+FROM employees
+WHERE employee_id &gt; 150 
+AND salary BETWEEN 5000 AND 10000 
+AND department_id &gt; 30;
+
+SELECT employee_id, salary, department_id
+FROM employees
+WHERE employee_id &gt; 150
+OR salary &gt; 10000
+AND department_id &gt; 50; 
+-- employee_id &gt; 150 혹은 salary &gt; 10000 그리고 department_id &gt; 50 
+-- OR 보다 AND부터 계산해야댐 그래서 OR먼저 계산하고 싶으면 ()사용하기 
+
+SELECT first_name, salary 
+FROM employees 
+WHERE salary BETWEEN 5000 AND 10000
+ORDER BY salary DESC;
+
+-- 80번 부서, 직원 이름, 봉급, 커미션 포함한 봉급을 
+-- 커미션 포함 봉급 순서로 내림차순 정렬 조회하기
+SELECT first_name AS &quot;이름&quot;
+, salary &quot;봉급&quot;
+, salary + salary * commission_pct AS 조정봉급
+, department_id 부서번호
+, email &quot;이메일 주소&quot; --별명에 띄어쓰기 있으면 무조건 쌍따음표 필수// 명령어일 경우 
+FROM employees
+WHERE department_id = 80 
+-- WHERE department_id + 10 = 90 이렇게 적어도됨 (쓸일은 없지만)
+ORDER BY 조정봉급 DESC;
+
+"></div><div class="a-Splitter-barV ui-draggable ui-draggable-handle" title="Resize Code Editor" style="position: absolute; left: 0px; top: 300px; width: 741px;"><div></div><button role="separator" class="a-Splitter-thumb" type="button" aria-expanded="true" aria-label="Resize Splitter"></button></div><div id="statement_result" class="results-container" style="position: absolute; width: 741px; height: 122px; top: 308px;"><div class="results-div" id="results">
+<span class="msg">
+<h2 class="visuallyhidden">Result Set 13</h2><table summary="Results from query 13" class="u-Report">
+<tbody><tr><th id="이름_318838261913562296061570033163069044147">이름</th><th id="봉급_318838261913562296061570033163069044147">봉급</th><th id="조정봉급_318838261913562296061570033163069044147">조정봉급</th><th id="부서번호_318838261913562296061570033163069044147">부서번호</th><th id="이메일 주소_318838261913562296061570033163069044147">이메일 주소</th></tr><tr><td headers="이름">John</td><td headers="봉급">14000</td><td headers="조정봉급">19600</td><td headers="부서번호">80</td><td headers="이메일 주소">JRUSSEL</td></tr><tr><td headers="이름">Karen</td><td headers="봉급">13500</td><td headers="조정봉급">17550</td><td headers="부서번호">80</td><td headers="이메일 주소">KPARTNER</td></tr><tr><td headers="이름">Alberto</td><td headers="봉급">12000</td><td headers="조정봉급">15600</td><td headers="부서번호">80</td><td headers="이메일 주소">AERRAZUR</td></tr><tr><td headers="이름">Lisa</td><td headers="봉급">11500</td><td headers="조정봉급">14375</td><td headers="부서번호">80</td><td headers="이메일 주소">LOZER</td></tr><tr><td headers="이름">Gerald</td><td headers="봉급">11000</td><td headers="조정봉급">14300</td><td headers="부서번호">80</td><td headers="이메일 주소">GCAMBRAU</td></tr><tr><td headers="이름">Ellen</td><td headers="봉급">11000</td><td headers="조정봉급">14300</td><td headers="부서번호">80</td><td headers="이메일 주소">EABEL</td></tr><tr><td headers="이름">Janette</td><td headers="봉급">10000</td><td headers="조정봉급">13500</td><td headers="부서번호">80</td><td headers="이메일 주소">JKING</td></tr><tr><td headers="이름">Clara</td><td headers="봉급">10500</td><td headers="조정봉급">13125</td><td headers="부서번호">80</td><td headers="이메일 주소">CVISHNEY</td></tr><tr><td headers="이름">Peter</td><td headers="봉급">10000</td><td headers="조정봉급">13000</td><td headers="부서번호">80</td><td headers="이메일 주소">PTUCKER</td></tr><tr><td headers="이름">Patrick</td><td headers="봉급">9500</td><td headers="조정봉급">12825</td><td headers="부서번호">80</td><td headers="이메일 주소">PSULLY</td></tr><tr><td headers="이름">Eleni</td><td headers="봉급">10500</td><td headers="조정봉급">12600</td><td headers="부서번호">80</td><td headers="이메일 주소">EZLOTKEY</td></tr><tr><td headers="이름">Allan</td><td headers="봉급">9000</td><td headers="조정봉급">12150</td><td headers="부서번호">80</td><td headers="이메일 주소">AMCEWEN</td></tr><tr><td headers="이름">Harrison</td><td headers="봉급">10000</td><td headers="조정봉급">12000</td><td headers="부서번호">80</td><td headers="이메일 주소">HBLOOM</td></tr><tr><td headers="이름">David</td><td headers="봉급">9500</td><td headers="조정봉급">11875</td><td headers="부서번호">80</td><td headers="이메일 주소">DBERNSTE</td></tr><tr><td headers="이름">Tayler</td><td headers="봉급">9600</td><td headers="조정봉급">11520</td><td headers="부서번호">80</td><td headers="이메일 주소">TFOX</td></tr><tr><td headers="이름">Peter</td><td headers="봉급">9000</td><td headers="조정봉급">11250</td><td headers="부서번호">80</td><td headers="이메일 주소">PHALL</td></tr><tr><td headers="이름">Alyssa</td><td headers="봉급">8800</td><td headers="조정봉급">11000</td><td headers="부서번호">80</td><td headers="이메일 주소">AHUTTON</td></tr><tr><td headers="이름">Danielle</td><td headers="봉급">9500</td><td headers="조정봉급">10925</td><td headers="부서번호">80</td><td headers="이메일 주소">DGREENE</td></tr><tr><td headers="이름">Lindsey</td><td headers="봉급">8000</td><td headers="조정봉급">10400</td><td headers="부서번호">80</td><td headers="이메일 주소">LSMITH</td></tr><tr><td headers="이름">Jonathon</td><td headers="봉급">8600</td><td headers="조정봉급">10320</td><td headers="부서번호">80</td><td headers="이메일 주소">JTAYLOR</td></tr><tr><td headers="이름">Jack</td><td headers="봉급">8400</td><td headers="조정봉급">10080</td><td headers="부서번호">80</td><td headers="이메일 주소">JLIVINGS</td></tr><tr><td headers="이름">Louise</td><td headers="봉급">7500</td><td headers="조정봉급">9750</td><td headers="부서번호">80</td><td headers="이메일 주소">LDORAN</td></tr><tr><td headers="이름">Christopher</td><td headers="봉급">8000</td><td headers="조정봉급">9600</td><td headers="부서번호">80</td><td headers="이메일 주소">COLSEN</td></tr><tr><td headers="이름">Nanette</td><td headers="봉급">7500</td><td headers="조정봉급">9000</td><td headers="부서번호">80</td><td headers="이메일 주소">NCAMBRAU</td></tr><tr><td headers="이름">Sarath</td><td headers="봉급">7000</td><td headers="조정봉급">8750</td><td headers="부서번호">80</td><td headers="이메일 주소">SSEWALL</td></tr><tr><td headers="이름">William</td><td headers="봉급">7400</td><td headers="조정봉급">8510</td><td headers="부서번호">80</td><td headers="이메일 주소">WSMITH</td></tr><tr><td headers="이름">Elizabeth</td><td headers="봉급">7300</td><td headers="조정봉급">8395</td><td headers="부서번호">80</td><td headers="이메일 주소">EBATES</td></tr><tr><td headers="이름">Oliver</td><td headers="봉급">7000</td><td headers="조정봉급">8050</td><td headers="부서번호">80</td><td headers="이메일 주소">OTUVAULT</td></tr><tr><td headers="이름">Mattea</td><td headers="봉급">7200</td><td headers="조정봉급">7920</td><td headers="부서번호">80</td><td headers="이메일 주소">MMARVINS</td></tr><tr><td headers="이름">David</td><td headers="봉급">6800</td><td headers="조정봉급">7480</td><td headers="부서번호">80</td><td headers="이메일 주소">DLEE</td></tr><tr><td headers="이름">Sundar</td><td headers="봉급">6400</td><td headers="조정봉급">7040</td><td headers="부서번호">80</td><td headers="이메일 주소">SANDE</td></tr><tr><td headers="이름">Amit</td><td headers="봉급">6200</td><td headers="조정봉급">6820</td><td headers="부서번호">80</td><td headers="이메일 주소">ABANDA</td></tr><tr><td headers="이름">Charles</td><td headers="봉급">6200</td><td headers="조정봉급">6820</td><td headers="부서번호">80</td><td headers="이메일 주소">CJOHNSON</td></tr><tr><td headers="이름">Sundita</td><td headers="봉급">6100</td><td headers="조정봉급">6710</td><td headers="부서번호">80</td><td headers="이메일 주소">SKUMAR</td></tr>
+</tbody></table><a href="https://livesql.oracle.com/apex/f?p=590:1:12685171019981:::::#" class="download-table2CSV">Download CSV</a><br>34 rows selected.</span></div></div>
+</div>
+</div>
+<div id="R1042620300822572753" class=""><input type="hidden" name="P1_SAMPLE_ID" id="P1_SAMPLE_ID" value=""><input type="hidden" data-for="P1_SAMPLE_ID" value="hjfV9LhMyYCAbIqjB1dV5XMd_7PaVis38hMaReRvehLKoaQsgEM1LHlKuljRQnfw-H0rzVMyrUDx40Eqiwz-gQ"><input type="hidden" name="P1_MIN_RESULT_SEQ" id="P1_MIN_RESULT_SEQ" value="2194026776"><input type="hidden" data-for="P1_MIN_RESULT_SEQ" value="Ec9Kov-xJWTail2TejbKQLcrvq5s1yypA_8MlbzdzKW_w_clvjP7ClQHXVaxE9YmRYrXN6kJHDlazvBU4aSBhQ"><input type="hidden" name="P1_SHOW_LEARN_SIDEBAR" id="P1_SHOW_LEARN_SIDEBAR" value="N"><input type="hidden" data-for="P1_SHOW_LEARN_SIDEBAR" value="n3lFyjyuyS5feCSJOcBmuS5lA_Ly3NNcgiDR7FMQ99KSt3lgJRHqSY7usmC0p8eO3KS1ZT7b_lB0DwYVeEj2bA"><input type="hidden" name="P1_LEARN_CONTEXT" id="P1_LEARN_CONTEXT" value=""><input type="hidden" data-for="P1_LEARN_CONTEXT" value="1LZPx0fqyx2f89VSryFycDaazAw9SZ4TY5JYpIvJFFQ2VWoV181GpNBtAj0MhcHiI0eLmECTgQsIkNfRms0uOw"><input type="hidden" name="P1_SQL2" id="P1_SQL2" value="SELECT first_name AS &quot;이름&quot;
+, salary &quot;봉급&quot;
+, salary + salary * commission_pct AS 조정봉급
+, department_id 부서번호
+, email &quot;이메일 주소&quot; --별명에 띄어쓰기 있으면 무조건 쌍따음표 필수// 명령어일 경우 
+FROM employees
+WHERE department_id = 80 
+-- WHERE department_id + 10 = 90 이렇게 적어도됨 (쓸일은 없지만)
+ORDER BY 조정봉급 DESC;"><input type="hidden" data-for="P1_SQL2" value="_YA_F0YIAgS4AxaxsPm6TUbRoKmPOrqS3jDEnq0gST7gfJ-ntmy1XSGx0OrH2mNfvR-bzwbExwnAmX0NjWxYSg"><input type="hidden" name="P1_NOTIF_ID" id="P1_NOTIF_ID" value=""><input type="hidden" data-for="P1_NOTIF_ID" value="N5i8MrKpmKh8Nhe-IjmQhUO9gUGKFVH_V4CLMa3IvhRO2rQA2DWtcyjW7qXHQCn_kHVCP7SUyXTHAgxBR87T5Q"><input type="hidden" name="P1_STATEMENT_ID" id="P1_STATEMENT_ID" value=""><input type="hidden" data-for="P1_STATEMENT_ID" value="01SE3GIByeQBWyOIdtuUaXxk6vFQEopYC481vDybNbJUqUwrkhUXBf1yLv0nV36eDiBQHTOplC-u0ReowbaT7Q"><input type="hidden" name="P1_WORKSHEET_FONT_SIZE" id="P1_WORKSHEET_FONT_SIZE" value="12"><input type="hidden" data-for="P1_WORKSHEET_FONT_SIZE" value="uDva7Eu15_Zs6d6nCmqcaKhjHE5TIDoXHAhaIkAh_HhZ_dRoMO9dw5nLbtUjeqjEmE2D7uy1bnJ3ncCFRGPTqQ"></div><div id="R1044873988521621686" class=""><div class="script-info">
+<strong>&nbsp;</strong> 
+<div class="script-actions">
+</div>
+</div>
+</div></div></div>
+      </main>
+      <footer class="t-Footer" id="t_Footer" role="contentinfo">
+        <div class="t-Footer-body">
+          <div class="t-Footer-content"><div id="R1012157221149035436" class=""><span class="footer-sql"> 2022 Oracle</span> · Live SQL 22.4.1, running Oracle Database 19c EE Extreme Perf - 19.17.0.0.0 · <a href="https://docs.oracle.com/en/database/oracle/oracle-database/" target="_blank">Database Documentation</a>  · <a href="https://asktom.oracle.com/pls/apex/f?p=100:::::::" target="_blank">Ask Tom</a> · <a href="https://devgym.oracle.com/" target="_blank">Dev Gym</a><br><span class="u-BuiltWithAPEX">Built with <span class="fa fa-heart"><span class="u-VisuallyHidden">love</span></span> using <a href="https://apex.oracle.com/" target="_blank">Oracle APEX</a> · <a href="http://www.oracle.com/us/legal/privacy/overview/index.html" target="_blank">Privacy</a>  · <a href="http://www.oracle.com/us/legal/terms/index.html" target="_blank">Terms of Use</a> </span></div><h1 class="u-VisuallyHidden">SQL Worksheet - Oracle Live SQL</h1>
+</div>
+          <div class="t-Footer-apex">
+            <div class="t-Footer-version">22.4.1</div>
+            <div class="t-Footer-customize"></div>
+            
+          </div>
+        </div>
+        <div class="t-Footer-top">
+          <a href="https://livesql.oracle.com/apex/f?p=590:1:12685171019981:::::#top" class="t-Footer-topButton" id="t_Footer_topButton" title="Start of page"><span class="a-Icon icon-up-chevron"></span></a>
+        </div>
+      </footer>
+    </div>
+  </div>
+</div>
+<div class="t-Body-inlineDialogs" id="t_Body_inlineDialogs"></div><input type="hidden" id="pPageFormRegionChecksums" value="[]">
+<input type="hidden" id="pPageItemsRowVersion" value=""><input type="hidden" id="pPageItemsProtected" value="UDFfU0FNUExFX0lEOlAxX01JTl9SRVNVTFRfU0VROlAxX1NIT1dfTEVBUk5fU0lE.,RUJBUjpQMV9MRUFSTl9DT05URVhUOlAxX1NRTDI6UDFfTk9USUZfSUQ6UDFfU1RB.,VEVNRU5UX0lEOlAxX1dPUktTSEVFVF9GT05UX1NJWkU/8cv9MZV4Uv5G1flouVKsyIOV1o1N-OwsSkZgRAGFIxv4KMM3lDCxSHxEJGEgiT9A1MJOSFEC7VPrnj3xVfifbw"></form>
+
+
+<script>
+var apex_img_dir = "\u002Fi\u002F";
+var apex = {env: {APP_USER: "LAHRRY0925@GMAIL.COM",APP_ID: "590",APP_PAGE_ID: "1",APP_SESSION: "12685171019981",APP_FILES: "r\u002Flivesql\u002F590\u002Ffiles\u002Fstatic\u002Fv350\u002F",WORKSPACE_FILES: "r\u002Flivesql\u002Ffiles\u002Fstatic\u002Fv1\u002F",APEX_VERSION: "22.1.3",APEX_BASE_VERSION: "22.1"},
+libVersions:{ckeditor5:"32.0.0",cropperJs:"1.5.12",domPurify:"2.3.1",hammer:"2.0.8",jquery:"3.6.0",jqueryUi:"1.13.1",maplibre:"1.15.2",markedJs:"4.0.12",prismJs:"1.26.0",oraclejet:"12.0.0",monacoEditor:"0.32.1",lessJs:"4.1.1"}};
+</script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/jquery-3.6.0.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/core.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/debug.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/util.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/locale.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/lang.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/message.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/wwv_flow.js_messages"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/date.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/storage.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/event.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/region.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/item.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/apex_5_0.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/navigation.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/server.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/page.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/widget.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/widget.util.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/clipboard.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/dynamic_actions_core.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/dynamic_actions.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/session.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/jquery-ui-apex.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/actions.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/hammer-2.0.8.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/widget.checkbox.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/widget.checkboxAndRadio.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/widget.jetDatePicker.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/widget.popupLov.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/widget.selectList.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/widget.textField.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/widget.textarea.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/widget.yesNo.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/widget.menu.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/widget.popup.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/widget.toggleCore.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/widget.collapsible.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/tooltipManager.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/theme.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/pwa.js"></script>
+
+<script type="text/javascript">
+apex.da.initDaEventList = function(){
+apex.da.gEventList = [
+{"name":"Run Statement","triggeringElementType":"BUTTON","triggeringButtonId":"B5153076003111131","bindType":"bind","bindEventType":"click","anyActionsFireOnInit":false,actionList:[{"eventResult":true,"executeOnPageInit":false,"stopExecutionOnError":true,javascriptFunction:function (){ apex.livesql.run();
+},"action":"NATIVE_JAVASCRIPT_CODE"}]},
+{"name":"On P0_DARKMODE Change - Persist Setting","triggeringElementType":"ITEM","triggeringElement":"P0_DARKMODE","bindType":"bind","bindEventType":"change","anyActionsFireOnInit":false,actionList:[{"eventResult":true,"executeOnPageInit":false,"stopExecutionOnError":true,javascriptFunction:function (){ $( "body" )
+    .toggleClass( "is-darkmode", apex.items.P0_DARKMODE.value == 'Y' )
+    .trigger( "theme-change" );
+},"action":"NATIVE_JAVASCRIPT_CODE"},{"eventResult":true,"executeOnPageInit":false,"stopExecutionOnError":true,"waitForResult":true,javascriptFunction:apex.da.executePlSqlCode,"ajaxIdentifier":"REEgVFlQRX5-NDIzNTg3NTQ4MTExNTEwOQ\u002Fwl6kBXHTClB2TWFHCe9yk8GVZ9RAO0zyihqXvLtcQ9oGGtKoJYBeOm2D9VNEoNOJUMMC13v1msoqW7pweY0ezA","attribute01":"#P0_DARKMODE","attribute04":"N","action":"NATIVE_EXECUTE_PLSQL_CODE"}]},
+{"name":"Clear Commands and Results","triggeringElementType":"BUTTON","triggeringButtonId":"B5151426299111130","bindType":"bind","bindEventType":"click","anyActionsFireOnInit":false,actionList:[{"eventResult":true,"executeOnPageInit":false,"stopExecutionOnError":true,javascriptFunction:function (){ $( "#editor" ).codeEditor( "setValue", "" ).codeEditor( "focus" );
+
+$("#results .msg").remove();
+$("#results").html('<span class="results-null-msg">SQL Statement Output</span>');
+},"action":"NATIVE_JAVASCRIPT_CODE"}]},
+{"name":"Dismiss Notification","triggeringElementType":"JQUERY_SELECTOR","triggeringElement":".dismiss-notification-button","bindType":"live","bindEventType":"click","anyActionsFireOnInit":false,actionList:[{"eventResult":true,"executeOnPageInit":false,"stopExecutionOnError":true,javascriptFunction:function (){ var alert_id = $(this.triggeringElement).data("notification-id");
+$s('P1_NOTIF_ID',alert_id);
+},"action":"NATIVE_JAVASCRIPT_CODE"},{"eventResult":true,"executeOnPageInit":false,"stopExecutionOnError":true,"waitForResult":true,javascriptFunction:apex.da.executePlSqlCode,"ajaxIdentifier":"REEgVFlQRX5-NTE2MzQxNzUyNDExMTE0Ng\u002F7a4kYGYzqwoeVJ5UnhcUmngC3qdHq4S5TVrQDzCDQSqstcriwAojC0jodlt6ouBUjpLBCi2z9VXl8E4pLG6FnQ","attribute01":"#P1_NOTIF_ID","attribute02":"#P1_NOTIF_ID","attribute04":"N","action":"NATIVE_EXECUTE_PLSQL_CODE"},{"eventResult":true,"executeOnPageInit":false,"stopExecutionOnError":true,"affectedElementsType":"REGION","affectedRegionId":"R3272893848426149971",javascriptFunction:apex.da.refresh,"action":"NATIVE_REFRESH"}]}];
+}
+</script>
+
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/widget.stickyWidget.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/theme42.js"></script>
+
+
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/script.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/table2CSV.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/widget.apexTabs.js"></script>
+
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/widget.splitter.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/xmlRenderer.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/xmlPrettyPrint.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/jsonPrettyPrint.js"></script>
+<script type="text/javascript">
+function checkJSON(str){
+  try {
+    var json = JSON.parse(str);
+    if (json && typeof json === "object") {
+      return json;
+    }
+  }
+  catch (e) { }
+  return false;
+};
+
+function formatXML() {
+    $('.format-xml').each(function(){
+    var parser = new DOMParser();
+    var xmlDocument = parser.parseFromString($(this).text(),"text/xml");
+    xmlPP.print(xmlDocument, $(this)[0]);
+    });
+};
+
+function formatJSON() {
+  $('.u-Report td').each(function(){
+    cell$ = $(this);
+    var cell_text = $(this).text();
+    if (checkJSON(cell_text)) {
+      cell$.addClass("format-xml").text("");
+      var jp = JSON.parse(cell_text);
+      jPP.printJson(cell$[0],null,jp);
+      //  cell$.html( cell_text );x
+    }
+  });
+}
+
+function updateEditorItems() {
+    // gets highlighted statement and sets to P1_SQL2 value
+    apex.items.P1_SQL.value  = $("#editor").codeEditor( "getValue" );
+    apex.items.P1_SQL2.value = $("#editor").codeEditor( "getSelection" );
+}
+
+(function() {
+    // be reused for the ctrl+enter command listed in "execute on page load."
+    var result = 1;
+    apex.livesql = {
+        run: function() {
+            updateEditorItems();
+            apex.server.process( "run_statement", {
+                pageItems: [ "P1_SQL", "P1_SQL2" ]
+            }, {
+                dataType: "text",
+                loadingIndicatorPosition: "page",
+                success: function( pData ) {
+                    var renderedData$ = $(pData);
+                    renderedData$.find("table").each(function() {
+                        var table$ = $(this);
+                        table$.before("<h2 class='visuallyhidden'>Result Set " + result + "</h2>");
+                        table$.attr("summary", "Results from query " + result);
+                        result++;
+                    });
+                    $( "#statement_result" ).empty().append(renderedData$);
+                    // show buttons as soon as we have executed one statement
+                    // $( "#reset_session,#save_session" ).show();
+                    $("#save_session").removeClass("apex_disabled");
+                    $("#save_session").attr("disabled", false);
+                    formatXML();
+                    formatJSON();
+                    createCSVDownloadLink('.results-div table.u-Report');
+                }
+            });
+        }
+    };
+})();
+</script>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/widget.treeView.js"></script>
+
+
+
+
+
+
+
+
+
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/require.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/requirejs.jetConfig.js"></script>
+<script src="./SQL Worksheet - Oracle Live SQL day03_files/widget.codeEditor.js"></script>
+<script type="text/javascript">
+apex.session.initTimeouts(300,{"idle_time_ms":1797000,"life_time_ms":18995000,"max_idle_time_ms":1800000},'f?p=590:1000::::::','f?p=590:1000::::::');
+apex.jQuery( function() {
+apex.page.init( this, function() {
+try {
+(function(){apex.widget.yesNo("P0_DARKMODE","SWITCH_CB");})();
+(function(){apex.jQuery('body').addClass('t-PageBody--leftNav');})();
+(function(){var e = apex.jQuery("#actions_menu", apex.gPageContext$);
+if (e.hasClass("js-addActions")) {
+  apex.actions.addFromMarkup( e );
+}
+e.menu({ iconType: 'fa', callout: e.hasClass("js-menu-callout")});})();
+} catch(e) {apex.debug.error(e)};
+apex.item.waitForDelayLoadItems().done(function() {
+try {
+(function(){apex.da.initDaEventList();
+apex.da.init();})();
+apex.theme42.initializePage.noSideCol();
+/**
+ * The following page structure is assumed for the resizing and splitters to work:
+ * 
+ *  div.t-Body-contentInner             - as output by APEX, +flex-basis: 0, +overflow: hidden
+ *      div.t-Body-contentInner2        - all content will be wrapped in this div, which has an absolute size, based on .t-Body-contentInner
+ *          div#main_splitter.resize
+ *              div#editor_panel.resize
+ *                  div#editor_splitter
+ *                      div#sql_panel
+ *                      div#statement_result
+ *              div#tutorial_panel
+ */
+
+
+// the artificially created .t-Body-contentInner2 will be a container will absolute sizing
+// based on the flex size of .t-Body-contentInner
+$(".t-Body-contentInner").children().wrapAll("<div class='t-Body-contentInner2'></div>");
+
+const
+    bodyContainerInner$ = $(".t-Body-contentInner"),
+    bodyContainerInner2$ = $(".t-Body-contentInner2"),
+    editor$ = $("#editor");
+
+// when .t-Body-contentInner changes size, change .t-Body-contentInner2 to match
+const resizeObserver = new ResizeObserver(apex.util.debounce(() => {
+    const height = bodyContainerInner$.height(),
+        width = bodyContainerInner$.width();
+    bodyContainerInner2$
+        .height(height)
+        .width(width);
+    $("#main_splitter").height(height);
+    $("#editor_splitter").height(height);
+    $("#main_splitter").trigger("resize");
+    $("#editor_splitter").trigger("resize");
+}, 200));
+
+resizeObserver.observe(bodyContainerInner$[0]);
+
+// when the sql_panel resizes, update the editor
+$("#sql_panel").on("resize", () => {
+    if (editor$.hasClass("a-MonacoEditor")) {
+        editor$.codeEditor("resize");
+    }
+});
+
+$("#editor_splitter").on("resize", function (e) {
+    e.stopPropagation();
+});
+
+$("#editor_panel").on("resize", function (e) {
+    $("#editor_splitter").trigger("resize");
+});
+
+$('#results').scrollTop($('#results')[0].scrollHeight);
+
+const mainSplitterChildCount = $("#main_splitter").children().length;
+
+if (mainSplitterChildCount === 1) {
+    // remove main splitter to keep things simple
+    $("#main_splitter").contents().unwrap();
+} else if (mainSplitterChildCount === 2) {
+    $("#main_splitter").splitter({
+        orientation: "horizontal",
+        positionedFrom: "end",
+        title: "Resize Tutorial",
+        position: 600,
+        change: function () {
+        }
+    });
+} else {
+    throw new Error("main_splitter has an unexpected child count");
+}
+
+$("#editor_splitter").splitter({
+    orientation: "vertical",
+    title: "Resize Code Editor",
+    position: 300,
+    collapsed: false,
+    change: function () {
+    }
+});
+
+$("#tutorial_panel ol li a").click(function (e) {
+    var href = $(e.target).attr("href");
+    $("#tutorial_panel").animate({
+        scrollTop: $(href).offset().top - apex.theme.defaultStickyTop() - 10
+    })
+    e.preventDefault();
+    return false;
+});
+
+
+$(".SQLSTATEMENT").each(function (index) {
+    var button$ = $('<button class="t-Button t-Button--small" type="button"><span class="t-Icon fa fa-clipboard "></span> Insert into Editor <span class="u-VisuallyHidden">Code Block ' + (index + 1) + '</span></button>');
+    $(this).after(button$);
+    var text = $(this).text();
+    button$.click(function () {
+        $("#editor")
+            .codeEditor("setValue", text)
+            .codeEditor("setCursorToEnd")
+            .codeEditor("focus")
+            .codeEditor("getEditor").revealLine(1);
+    });
+});
+
+/*
+(function() {
+    var tabAfterAce = function( next ) {
+        var tabbables$ = $(":tabbable");
+        var runningPrevious$ = $([]);
+        var previous$ = tabbables$.last();
+        var next$ = tabbables$.first();
+        var encounteredEl = false;
+        tabbables$.each(function() {
+            var tabbable$ = $(this);
+            if (encounteredEl) {
+                next$ = tabbable$;
+                return false;
+            }
+            encounteredEl = $(this).hasClass("ace_text-input");
+            if (encounteredEl) {
+                previous$ = runningPrevious$;
+            }
+            runningPrevious$ = tabbable$;
+        });
+        if ( next ) {
+            next$.focus();
+        } else {
+            previous$.focus();
+        }
+    };
+
+    sqlEditor.commands.addCommand({
+        name: "escape tab to next",
+        bindKey: {win: "Alt-F6", mac: "Alt-F6"},
+        exec: function(editor) {
+            tabAfterAce ( true );
+        }
+    });
+    sqlEditor.commands.addCommand({
+        name: "escape tab to previous",
+        bindKey: {win: "Alt-Shift-F6", mac: "Alt-Shift-F6"},
+        exec: function(editor) {
+            tabAfterAce ( false );
+        }
+    });
+})();
+
+    sqlEditor.commands.addCommand({
+        name: "run sql",
+        bindKey: {win: "Ctrl-Enter", mac: "Cmd-Enter"},
+        exec: function(editor) {
+            apex.livesql.run();
+        }
+    });
+
+*/
+
+$("button.a-Splitter-thumb").attr("aria-label", "Resize Splitter");
+
+// Configure the editor
+livesql.initWorksheetEditor();
+} finally {
+apex.event.trigger(apex.gPageContext$,'apexreadyend');
+};
+});
+});
+});apex.pwa.registerServiceWorker('\u002Fapex\u002Fr\u002Flivesql\u002Flivesql\u002Fsw.js?v=22.1.3-134861464230\u0026lang=en');
+</script>
+
+
+
+<input id="apexCBMDummySelection" style="display:none;" value="x"><div id="pushModal" style="width: 100%; display:none; height: 100%;" class="u-DisplayNone u-Overlay--glass"></div><div id="actions_menu" class="a-Menu" style="display:none;" role="menu"><ul><li data-id="" data-disabled="" data-hide="" data-shortcut="" data-icon="fa fa-list-ol"><a href="https://livesql.oracle.com/apex/f?p=590:6:12685171019981::LEVEL1:::" title="" target="">View Session</a></li>
+<li data-id="" data-disabled="" data-hide="" data-shortcut="" data-icon="fa fa-undo"><a href="javascript:apex.theme42.dialog(&#39;f?p=590:20:12685171019981::LEVEL1:20::\u0026cs=3w9n70SzaBrI0gF5QdweCilePARfrbk7VgN-4a0wrI0YyG_azE5xPhBsi0lOj2gKOuCosxvJskDxjHImS9udvXQ\u0026p_dialog_cs=P-2yQO8W5PRieJnye8vawEVq-uKFP-UGOvR-ibCaSutNA7i1kC4opcu7U9FVMyEcbVJi5_GmrBp68IXn91z1JA&#39;,{title:&#39;Reset Session&#39;,h:&#39;auto&#39;,w:&#39;720&#39;,mxw:&#39;960&#39;,modal:true,dialog:null,dlgCls:&#39;t-Dialog-page--standard &#39;+&#39;&#39;},&#39;&#39;,apex.jQuery(&#39;#actions_menu&#39;))" title="" target="">Reset Session</a></li>
+<li data-id="" data-disabled="" data-hide="" data-shortcut="" data-icon="fa fa-table-wrench"><a href="javascript:apex.theme42.dialog(&#39;f?p=590:76:12685171019981::LEVEL1\u0026p_dialog_cs=rIO7ku3H7nusVJI59RIMhmZt47GNSkMTcFuQZZH_gNprIr_xXzCaJusabeancgpssf_TDDEuaajKWurHqcgifw&#39;,{title:&#39;Preferences&#39;,h:&#39;auto&#39;,w:&#39;720&#39;,mxw:&#39;960&#39;,modal:true,dialog:null,dlgCls:&#39;t-Dialog-page--standard &#39;+&#39;&#39;},&#39;&#39;,apex.jQuery(&#39;#actions_menu&#39;))" title="" target="">Maximum Rows Preference</a></li>
+</ul></div><div class="t-NavigationBar-menu a-Menu" style="display: none" id="menu_L7178662666532670" role="menu"><ul><li class="" data-current="false" data-icon=""><a href="javascript:apex.theme42.dialog(&#39;f?p=590:8:12685171019981::LEVEL1:RP\u0026p_dialog_cs=PlspoRn-jIlJL9UgKhiq6P8uCS70CNLISl-9IHFZXPqmbiKxnFjj2woCYphe2UA7sdg93Ukipwd4B89_ohA-Xw&#39;,{title:&#39;Notifications&#39;,h:&#39;auto&#39;,w:&#39;720&#39;,mxw:&#39;960&#39;,modal:true,dialog:null,dlgCls:&#39;t-Dialog-page--standard &#39;+&#39;&#39;},&#39;&#39;,apex.gPageContext$)" title="" target="">Notifications</a></li><li class="" data-current="false" data-icon=""><a href="https://livesql.oracle.com/apex/apex_authentication.logout?p_app_id=590&amp;p_session_id=12685171019981" title="" target="">Sign Out</a></li></ul></div><div class="monaco-aria-container"><div class="monaco-alert" role="alert" aria-atomic="true"></div><div class="monaco-alert" role="alert" aria-atomic="true"></div><div class="monaco-status" role="complementary" aria-live="polite" aria-atomic="true"></div><div class="monaco-status" role="complementary" aria-live="polite" aria-atomic="true"></div></div></body></html>
